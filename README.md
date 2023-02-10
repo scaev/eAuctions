@@ -2,7 +2,19 @@
 
 ### Welcome to eAuctions! 🗓
 
-## Meet the Developer! 🤝
+## Meet the Developers! 🤝
+
+### 🧑‍💻 Gautham Battineni
+
+### 🧑‍💻 Kelvin Chan
+
+### 🧑‍💻 Kaan Karadag
+
+## Meet the Design Team! 🤝
+
+### 👩‍💻 Catie Camer
+
+### 👩‍💻 Kateryna Bielotserkovska
 
 ## Wireframing & Concept 📝
 
@@ -31,3 +43,5 @@ Project planning materials are held in [this](https://trello.com/b/N6PWQ1w3/proj
 ## Credits 🙏
 
 ## Icebox Features 🧊
+
+- Add items to watchlist without having to bid
