@@ -1,4 +1,7 @@
-from django.shortcuts import render
+import uuid
+import boto3
+from django.shortcuts import render, redirect
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Auction, User, Bid  
 
 # Create your views here.
