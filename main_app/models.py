@@ -35,3 +35,4 @@ class Bid(models.Model):
     
     def __str__(self):
         return f"{self.amount} on {self.auction}"
+
