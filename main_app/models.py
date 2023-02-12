@@ -36,3 +36,10 @@ class Bid(models.Model):
     
     def __str__(self):
         return f"{self.amount} on {self.auction}"
+
+class Photo(models.Model):
+    url = models.CharField(max_length=200)
+    auction = models.ForeignKey(Auction, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Photo for cat_id: {self.auction_id} @{self.url}"

@@ -3,7 +3,7 @@ import boto3
 import os
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Auction, User, Bid  
+from .models import Auction, User, Bid, Photo  
 
 # Create your views here.
 
@@ -39,3 +39,4 @@ def auctions_index(request):
   return render(request, 'auctions/index.html', {
     'auctions': auctions
   })
+  
