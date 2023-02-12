@@ -36,10 +36,6 @@ def about(request):
 
 def auctions_index(request):
   auctions = Auction.objects.all()
-  return render(request, 'cats/index.html', {
+  return render(request, 'auctions/index.html', {
     'auctions': auctions
   })
-
-class Photo(models.Model):
-  url = models.CharField(max_length = 250)
-  Auction = models.ForeignKey(Auction, on_delete = models.CASCADE)

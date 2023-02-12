@@ -19,6 +19,7 @@
 ## Wireframing & Concept 📝
 
 ![wireframe](-)
+![ERD](https://i.imgur.com/X1CvuI6.png)
 
 Project planning materials are held in [this](https://trello.com/b/N6PWQ1w3/project-3-reauction) public Trello board.
 

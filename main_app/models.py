@@ -1,4 +1,10 @@
 from django.db import models
+from django.urls import reverse
+
+
+USERS = (
+    'kelvin'
+)
 
 class User(models.Model):
     username = models.CharField(max_length=30)
@@ -18,6 +24,9 @@ class Auction(models.Model):
     
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={'auction_id': self.id})
 
 class Bid(models.Model):
     amount = models.DecimalField(max_digits=10, decimal_places=2)
