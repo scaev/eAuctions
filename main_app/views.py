@@ -40,3 +40,4 @@ def auctions_index(request):
     'auctions': auctions
   })
   
+
