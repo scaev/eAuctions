@@ -14,7 +14,30 @@
     <div class="container">
       <div class="left-panel">
         <div class="images">
-          <div class="main-image"></div>
+          <div class="main-image">
+            {% for photo in auction.photo_set.all %}
+            <img
+              class="responsive-img card-panel"
+              src="{{photo.url}}"
+              alt="Auction Photo"
+            />
+            {% empty %}
+            <div class="card-panel teal-text center-align">
+              No Photos Uploaded
+            </div>
+            {% endfor %}
+            <form
+              action="{% url 'add_photo' auction.id %}"
+              enctype="multipart/form-data"
+              method="POST"
+              class="card-panel"
+            >
+              {% csrf_token %}
+              <input type="file" name="photo-file" />
+              <br /><br />
+              <button type="submit" class="btn">Upload Photo</button>
+            </form>
+          </div>
           <div class="secondary-images">
             <div></div>
             <div></div>
@@ -24,15 +47,7 @@
         </div>
         <div class="product-info">
           <h3>Product Information</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex culpa
-            molestiae aliquid. Quos, accusamus? Doloribus iusto dolor aliquam
-            laborum officiis?Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Ex culpa molestiae aliquid. Quos, accusamus? Doloribus iusto
-            dolor aliquam laborum officiis?Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Ex culpa molestiae aliquid. Quos,
-            accusamus? Doloribus iusto dolor aliquam laborum officiis?
-          </p>
+          <p>{{ auction.description }}</p>
           <p><strong>Condition</strong>: Open Box</p>
           <p><strong>Item Category</strong>: Electronics</p>
         </div>
@@ -42,7 +57,7 @@
         <h2>Time left: <span class="red">03:23:22</span> | Bids: 8</h2>
         <h2>
           Current Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          $485.00
+          ${{ auction.starting_price }}
         </h2>
         <h2>
           My
@@ -54,19 +69,7 @@
         </h2>
         <button type="button" class="update-button">Place My Bid</button>
         <button type="button" class="delete-button">Delete My Bid</button>
-        <table>
-
-          {% for photo in auction.photo_set.all %}
-          <img class="responsive-img card-panel" src="{{photo.url}}" />
-          {% empty %}
-          <div class="card-panel teal-text center-align">No Photos Uploaded</div>
-          {% endfor %}
-          <form
-            action="{% url 'add_photo' auction.id %}"
-            enctype="multipart/form-data"
-            method="POST"
-            class="card-panel"
-          >
+        <!-- <table>
           <tr>
             <th>Bidder</th>
             <th>Bid Amount</th>
@@ -74,7 +77,7 @@
           </tr>
           <tr>
             <td>John Doe</td>
-            <td>$500.00</td>
+            <td>${{ bid.amount }}</td>
             <td>01/03/2023</td>
           </tr>
           <tr>
@@ -87,7 +90,22 @@
             <td>$400.00</td>
             <td>01/01/2023</td>
           </tr>
-        </table>
+        </table> -->
+        <!-- Ask to David -->
+        <table>
+          <tr>
+              <th>Bid Amount</th>
+              <th>Date Created</th>
+              <th>User</th>
+          </tr>
+          {% for bid in bids %}
+          <tr>
+              <td>{{ bid.amount }}</td>
+              <td>{{ bid.date_created }}</td>
+              <td>{{ bid.user.username }}</td>
+          </tr>
+          {% endfor %}
+      </table>
       </div>
     </div>
   </body>
