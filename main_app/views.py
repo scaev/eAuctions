@@ -3,7 +3,7 @@ import boto3
 import os
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Auction, User, Bid, Photo, Bid  
+from .models import Auction, User, Bid, Photo  
 from .forms import BiddingForm
 
 # Create your views here.
@@ -56,3 +56,6 @@ def add_bid(request, auction_id):
   return redirect('detail', auction_id = auction_id)  
   
 
+def list_bids(request):
+    bids = Bid.objects.all()
+    return render(request, 'list_bids.html', {'bids': bids})
