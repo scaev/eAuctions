@@ -1,0 +1,108 @@
+.header {
+  background-color: #333;
+  color: white;
+  padding: 2px;
+  text-align: left;
+  padding-left: 80px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 200;
+}
+
+.header h1 {
+  display: inline-block;
+  margin-right: 150px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e5e5e5;
+  padding: 10px;
+}
+
+.navbar a {
+  color: black;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* align-items: center;
+  height: 100vh;
+  padding-inline: 10vh;
+  padding-block: 5vh; */
+}
+
+.top-panel {
+  flex: 50;
+}
+
+.bottom-panel {
+  flex: 50;
+
+  background-color: rgb(65, 65, 65);
+}
+
+.auction-experience {
+  width: 500px;
+  padding: 20px;
+  background-color: #f2f2f2;
+
+  position: absolute;
+  top: 180px;
+  left: 450px;
+}
+
+.grey-square {
+  width: 200px;
+  height: 130%;
+  padding: 20px;
+  background-color: #f2f2f2;
+
+  position: absolute;
+  top: 80px;
+  right: -400px;
+  background-color: lightgrey;
+}
+
+.auction-experience h2 {
+  text-align: center;
+  word-wrap: break-word;
+  display: inline-block;
+  width: 100%;
+  font-size: 20px;
+  line-height: 30px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+@media only screen and (max-width: 500px) {
+  .auction-experience h2 {
+    font-size: 16px;
+    line-height: 30px;
+  }
+}
+
+h3.about-us {
+  text-align: center;
+  color: darkgray;
+  font-size: 14px;
+}
+
+.mission {
+  width: 400px;
+  padding: 20px;
+  color: white;
+
+  position: absolute;
+  bottom: 180px;
+  left: 450px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 130%;
+}
