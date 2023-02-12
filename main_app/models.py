@@ -41,4 +41,4 @@ class Photo(models.Model):
     auction = models.ForeignKey(Auction, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"Photo for cat_id: {self.auction_id} @{self.url}"
+        return f"Photo for auction_id: {self.auction_id} @{self.url}"
