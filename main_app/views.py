@@ -13,6 +13,12 @@ def about(request):
 
 def auctions_index(request):
   auctions = Auction.objects.all()
-  return render(request, 'cats/index.html', {
+  return render(request, 'auctions/index.html', {
     'auctions': auctions
+  })
+
+def auctions_detail(request, auction_id):
+  auction = Auction.objects.get(id=auction_id)
+  return render(request, 'auctions/detail.html', {
+    'auction': auction,
   })
