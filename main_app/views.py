@@ -1,7 +1,7 @@
 import uuid
 import boto3
 import os
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Auction, User, Bid, Photo  
 from .forms import BiddingForm
@@ -43,8 +43,9 @@ def auctions_index(request):
 
 def auctions_detail(request, auction_id):
   auction = Auction.objects.get(id=auction_id)
+  bids = auction.bid_set.all()
   return render(request, 'auctions/detail.html', {
-    'auction': auction,
+    'auction': auction,'bids': bids
   })
 
 def add_bid(request, auction_id):
@@ -56,6 +57,3 @@ def add_bid(request, auction_id):
   return redirect('detail', auction_id = auction_id)  
   
 
-def list_bids(request):
-    bids = Bid.objects.all()
-    return render(request, 'list_bids.html', {'bids': bids})
