@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="mybids.css" />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="header">
+      <span class="eAuction"> <span class="text-style-1">e</span>Auction </span>
+      <span class="About"> About </span>
+
+      <span class="All-Auction-Items"> All Auction Items </span>
+      <span class="Sell"> Sell </span>
+      <span class="Login"> Login </span>
+    </div>
+    <h1>Your Bids</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Product</th>
+          <th>Winning Bid</th>
+          <th>Your Bid</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="centre-image">
+              <img src="/images/guitar.jpeg" width="50" />
+            </div>
+          </td>
+          <td>Guitar</td>
+          <td>$100</td>
+          <div class="red">
+            <td style="color: red">$80</td>
+            <div></div>
+          </div>
+          <td>Lost</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="centre-image">
+              <img src="/images/ring.jpeg" width="50" />
+            </div>
+          </td>
+          <td>Ring</td>
+          <td>$440</td>
+          <div class="red">
+            <td style="color: red">$80</td>
+            <div></div>
+          </div>
+          <td>Lost</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="centre-image">
+              <img src="/images/mercer.jpeg" width="50" />
+            </div>
+          </td>
+          <td>Mercer Bag</td>
+          <td>$150</td>
+          <div class="red">
+            <td style="color: red">$150</td>
+            <div></div>
+          </div>
+          <td>Winning</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="centre-image">
+              <img src="/images/teddybear.jpeg" width="50" />
+            </div>
+          </td>
+          <td>Teddy Bear</td>
+          <td>$70</td>
+          <div class="red">
+            <td style="color: red">$60</td>
+            <div></div>
+          </div>
+          <td>Outbid</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
+</html>
