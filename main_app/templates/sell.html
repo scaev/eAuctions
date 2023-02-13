@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="sell.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="reset.css" /> -->
+  </head>
+  <body>
+    <div class="Desktop---1">
+      <div class="header">
+        <span class="eAuction">
+          <span class="text-style-1">e</span>Auction
+        </span>
+        <span class="About"> About </span>
+
+        <span class="All-Auction-Items"> All Auction Items </span>
+        <span class="Sell"> Sell </span>
+        <span class="Login"> Login </span>
+      </div>
+    </div>
+    <div class="big-div">
+      <h1>What Do You Want To Sell?</h1>
+      <div class="sell-upload">
+        <p class="sell-upload-text">Click to upload photo</p>
+      </div>
+      <div class="small-upload">
+        <div class="square-upload"></div>
+        <div class="square-upload"></div>
+        <div class="square-upload"></div>
+        <div class="square-upload"></div>
+      </div>
+     
+      </div>
+      <div class="title-container">
+        <h3 class="subheading">Title</h3>
+        <div class="Rectangle-52">
+          <input type="title" id="title" name="title" placeholder="Title" />
+          <h3 class="subheading">Item Category</h3>
+          <label for="category"></label>
+<select id="category" name="category" class="dropdown-menu">
+  <option value="" disabled selected>Select a Category</option>
+  <option value="category1">Category 1</option>
+  <option value="category2">Category 2</option>
+  <option value="category3">Category 3</option>
+</select>
+<h3 class="subheading">Description</h3>
+<label for="description"></label>
+<textarea id="description" name="description" rows="5" class="description-field" placeholder="Provide a description of what you are selling."></textarea>
+
+<h3 class="subheading">Condition</h3>
+<div class="radio-group">
+  <input type="radio" id="new" name="condition" value="new" checked>
+  <label for="new">New</label>
+  
+  <input type="radio" id="open-box" name="condition" value="open-box">
+  <label for="open-box">Open Box</label>
+  
+  <input type="radio" id="used" name="condition" value="used">
+  <label for="used">Used</label>
+</div>
+<h3 class="subheading">Pricing</h3>
+<h3 class="subsubheading">Auction duration</h3>
+
+<select id="category" name="category" class="duration">
+  <option value="" disabled selected>Select amount of days</option>
+  <option value="category1">5 Days</option>
+  <option value="category2">10 Days</option>
+  <option value="category3">20 Days</option>
+</select>
+
+<h3 class="subheading">Starting bid</h3>
+<label for="bid-amount"></label>
+<input type="text" id="bidAmount" name="bidAmount" pattern="^\$\d+(\.\d{2})?$" placeholder="$0.00">
+
+
+<div class="Rectangle-34">List Item</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      
+    </div>
+
+    
+  </body>
+</html>
