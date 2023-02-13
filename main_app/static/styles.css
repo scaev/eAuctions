@@ -101,3 +101,12 @@
   color: #ccc;
   margin-top: 10px;
 }
+
+.responsive-img card-panel {
+  height: 300px;
+  width: 300px;
+  max-width: 300px;
+  max-height: 300px;
+  display: block;
+  object-fit: cover;
+}
