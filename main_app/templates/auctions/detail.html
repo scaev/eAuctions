@@ -1,75 +1,60 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="/static/auctiondetails.css" />
-  </head>
-  <body>
-    <div class="header">
-      <h1>eAuction</h1>
-      <h1>About</h1>
-      <h1>All Auction Items</h1>
-      <h1>My Bids</h1>
-      <h1>Login</h1>
-    </div>
-    <div class="container">
-      <div class="left-panel">
-        <div class="images">
-          <div class="main-image">
-            {% for photo in auction.photo_set.all %}
-            <img
-              class="responsive-img card-panel"
-              src="{{photo.url}}"
-              alt="Auction Photo"
-            />
-            {% empty %}
-            <div class="card-panel teal-text center-align">
-              No Photos Uploaded
-            </div>
-            {% endfor %}
-            <form
-              action="{% url 'add_photo' auction.id %}"
-              enctype="multipart/form-data"
-              method="POST"
-              class="card-panel"
-            >
-              {% csrf_token %}
-              <input type="file" name="photo-file" />
-              <br /><br />
-              <button type="submit" class="btn">Upload Photo</button>
-            </form>
-          </div>
-          <div class="secondary-images">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-        </div>
-        <div class="product-info">
-          <h3>Product Information</h3>
-          <p>{{ auction.description }}</p>
-          <p><strong>Condition</strong>: Open Box</p>
-          <p><strong>Item Category</strong>: Electronics</p>
-        </div>
+{% extends 'base.html' %} {% block content %}
+
+<div class="container">
+  <div class="left-panel">
+    <div class="images">
+      <div class="main-image">
+        {% for photo in auction.photo_set.all %}
+        <img
+          class="responsive-img card-panel"
+          src="{{photo.url}}"
+          alt="Auction Photo"
+        />
+        {% empty %}
+        <div class="card-panel teal-text center-align">No Photos Uploaded</div>
+        {% endfor %}
+        <form
+          action="{% url 'add_photo' auction.id %}"
+          enctype="multipart/form-data"
+          method="POST"
+          class="card-panel"
+        >
+          {% csrf_token %}
+          <input type="file" name="photo-file" />
+          <br /><br />
+          <button type="submit" class="btn">Upload Photo</button>
+        </form>
       </div>
-      <div class="right-panel">
-        <h1>{{ auction.title }}</h1>
-        <h2>Time left: <span class="red">03:23:22</span> | Bids: 8</h2>
-        <h2>
-          Current Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          ${{ auction.starting_price }}
-        </h2>
-        <h2>
-          My
-          Bid:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
-            type="text"
-            value="$0.00"
-            class="price-input"
-          />
-        </h2>
-        <button type="button" class="update-button">Place My Bid</button>
-        <button type="button" class="delete-button">Delete My Bid</button>
-        <!-- <table>
+      <div class="secondary-images">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="product-info">
+      <h3>Product Information</h3>
+      <p>{{ auction.description }}</p>
+      <p><strong>Condition</strong>: Open Box</p>
+      <p><strong>Item Category</strong>: Electronics</p>
+    </div>
+  </div>
+  <div class="right-panel">
+    <h1>{{ auction.title }}</h1>
+    <h2>Time left: <span class="red">03:23:22</span> | Bids: 8</h2>
+    <h2>
+      Current Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${{ auction.starting_price }}
+    </h2>
+    <h2>
+      My Bid:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+        type="text"
+        value="$0.00"
+        class="price-input"
+      />
+    </h2>
+    <button type="button" class="update-button">Place My Bid</button>
+    <button type="button" class="delete-button">Delete My Bid</button>
+    <!-- <table>
           <tr>
             <th>Bidder</th>
             <th>Bid Amount</th>
@@ -91,22 +76,22 @@
             <td>01/01/2023</td>
           </tr>
         </table> -->
-        <!-- Ask to David -->
-        <table>
-          <tr>
-            <th>Bid Amount</th>
-            <th>Date Created</th>
-            <th>User</th>
-          </tr>
-          {% for bid in bids %}
-          <tr>
-            <td>{{ bid.amount }}</td>
-            <td>{{ bid.date_created }}</td>
-            <td>{{ bid.user.username }}</td>
-          </tr>
-          {% endfor %}
-        </table>
-      </div>
-    </div>
-  </body>
-</html>
+    <!-- Ask to David -->
+    <table>
+      <tr>
+        <th>Bid Amount</th>
+        <th>Date Created</th>
+        <th>User</th>
+      </tr>
+      {% for bid in bids %}
+      <tr>
+        <td>{{ bid.amount }}</td>
+        <td>{{ bid.date_created }}</td>
+        <td>{{ bid.user.username }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+
+{% endblock %}

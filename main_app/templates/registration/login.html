@@ -1,47 +1,36 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="signin.css" />
-  </head>
-  <body>
-    <div class="header">
-      <h1>eAuction</h1>
-      <h1>About</h1>
-      <h1>All Auction Items</h1>
-      <h1>My Bids</h1>
-      <h1>Login</h1>
-    </div>
-    <div class="container">
-      <div class="left-panel">
-        <div class="images">
-          <div class="main-image">
-            <img src="/images/people.jpeg" width="650" alt="" />
-          </div>
-        </div>
-      </div>
-      <div class="right-panel">
-        <span class="Welcome-to-eAuction">
-          Welcome to
-          <span class="text-style-1">e</span
-          ><span class="text-style-2">Auction</span>
-        </span>
-        <div
-          class="Please-put-the-correct-email-and-password-below-to-enter-your-account"
-        >
-          Please put the correct email and password below to enter your account:
-        </div>
-        <form method="POST" action="{% url 'login' %}">
-          {% csrf_token %} {{ form.as_p }}
-          <input type="hidden" name="next" value="{{ next }}" />
-          <button type="submit" class="btn">Log In</button>
-        </form>
+{% extends 'base.html' %} {% block content %}
 
-        <span class="Not-a-member-Join-now">
-          Not a member?
-          <span class="text-style-1">Join now</span>
-          <span class="text-style-2"></span>
-        </span>
+<div class="container">
+  <div class="left-panel">
+    <div class="images">
+      <div class="main-image">
+        <img src="/images/people.jpeg" width="650" alt="" />
       </div>
     </div>
-  </body>
-</html>
+  </div>
+  <div class="right-panel">
+    <span class="Welcome-to-eAuction">
+      Welcome to
+      <span class="text-style-1">e</span
+      ><span class="text-style-2">Auction</span>
+    </span>
+    <div
+      class="Please-put-the-correct-email-and-password-below-to-enter-your-account"
+    >
+      Please put the correct email and password below to enter your account:
+    </div>
+    <form method="POST" action="{% url 'login' %}">
+      {% csrf_token %} {{ form.as_p }}
+      <input type="hidden" name="next" value="{{ next }}" />
+      <button type="submit" class="btn">Log In</button>
+    </form>
+
+    <span class="Not-a-member-Join-now">
+      Not a member?
+      <span class="text-style-1">Join now</span>
+      <span class="text-style-2"></span>
+    </span>
+  </div>
+</div>
+
+{% endblock %}
