@@ -30,19 +30,11 @@
         >
           Please put the correct email and password below to enter your account:
         </div>
-        <div class="Rectangle-52">
-          <input type="email" id="email" name="email" placeholder="Email" />
-        </div>
-        <div class="Rectangle-33">
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Password"
-          />
-        </div>
-
-        <button type="button" class="login-button">Login</button>
+        <form method="POST" action="{% url 'login' %}">
+          {% csrf_token %} {{ form.as_p }}
+          <input type="hidden" name="next" value="{{ next }}" />
+          <button type="submit" class="btn">Log In</button>
+        </form>
 
         <span class="Not-a-member-Join-now">
           Not a member?
