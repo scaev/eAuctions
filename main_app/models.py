@@ -13,14 +13,7 @@ class User(models.Model):
     
     def __str__(self):
         return self.username
-class Bid(models.Model):
-    amount = models.DecimalField(max_digits=10, decimal_places=2)
-    date_created = models.DateTimeField(auto_now_add=True)
-    # auction = models.ForeignKey(Auction, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
     
-    def __str__(self):
-        return f"{self.amount} on {self.auction}"
 
 class Auction(models.Model):
     title = models.CharField(max_length=100)
@@ -28,7 +21,17 @@ class Auction(models.Model):
     starting_price = models.DecimalField(max_digits=10, decimal_places=2)
     end_date = models.DateTimeField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    bid = models.ForeignKey(Bid, on_delete=models.CASCADE, null=True)
+    
+class Bid(models.Model):
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    date_created = models.DateTimeField(auto_now_add=True)
+    auction = models.ForeignKey(Auction, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return f"{self.amount} on {self.auction}"
+
+
 
     def __str__(self):
         return self.title
