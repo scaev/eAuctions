@@ -94,18 +94,18 @@
         <!-- Ask to David -->
         <table>
           <tr>
-              <th>Bid Amount</th>
-              <th>Date Created</th>
-              <th>User</th>
+            <th>Bid Amount</th>
+            <th>Date Created</th>
+            <th>User</th>
           </tr>
           {% for bid in bids %}
           <tr>
-              <td>{{ bid.amount }}</td>
-              <td>{{ bid.date_created }}</td>
-              <td>{{ bid.user.username }}</td>
+            <td>{{ bid.amount }}</td>
+            <td>{{ bid.date_created }}</td>
+            <td>{{ bid.user.username }}</td>
           </tr>
           {% endfor %}
-      </table>
+        </table>
       </div>
     </div>
   </body>
