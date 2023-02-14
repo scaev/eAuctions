@@ -5,3 +5,4 @@ class BiddingForm(ModelForm):
     class Meta:
         model = Bid
         fields = ['amount']
+
