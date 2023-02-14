@@ -19,7 +19,7 @@ class AuctionCreate(LoginRequiredMixin, CreateView):
   fields = ['title', 'description', 'starting_price', 'end_date' ]
 
   def form_valid(self, form):
-    form.instance.user = self.requests.user
+    form.instance.user = self.request.user
     return super().form_valid(form)
 
 class AuctionUpdate(LoginRequiredMixin, UpdateView):
@@ -68,18 +68,32 @@ def auctions_index(request):
 def auctions_detail(request, auction_id):
   auction = Auction.objects.get(id=auction_id)
   bids = auction.bid_set.all()
+  bid_form = BiddingForm()
   return render(request, 'auctions/detail.html', {
-    'auction': auction,'bids': bids
+    'auction': auction,'bids': bids, 'bid_form' : bid_form
   })
 
+@login_required
 def add_bid(request, auction_id):
   form = BiddingForm(request.POST)
   if form.is_valid():
     new_bid = form.save(commit = False)
     new_bid.auction_id = auction_id
-    new_bid.save()
+    new_bid.user_id= request.user.id
+    current_auction = Auction.objects.get(id=auction_id)
+    bids_current_auction = current_auction.bid_set.all()
+    max_bid = bids_current_auction.order_by('-amount')[:1]
+    max_bid_amount = max_bid.first().amount
+    if max_bid_amount < new_bid.amount:
+      new_bid.save()
+    else:
+      error_message = 'Please place a bigger amount - try again'
   return redirect('detail', auction_id = auction_id)  
   
+
+
+
+
 def signup(request):
   error_message = ''
   if request.method == 'POST':

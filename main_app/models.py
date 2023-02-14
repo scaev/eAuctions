@@ -22,6 +22,9 @@ class Auction(models.Model):
     def __str__(self):
         return self.title
     
+    class Meta:
+        ordering = ['end_date']
+    
     def get_absolute_url(self):
         return reverse('detail', kwargs={'auction_id': self.id})
 class Bid(models.Model):
@@ -32,6 +35,9 @@ class Bid(models.Model):
     
     def __str__(self):
         return f"{self.amount} on {self.auction}"
+    
+    class Meta:
+        ordering = ['-amount']
 
 
 class Photo(models.Model):
