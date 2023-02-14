@@ -20,7 +20,10 @@ class AuctionCreate(LoginRequiredMixin, CreateView):
 
   def form_valid(self, form):
     form.instance.user = self.request.user
-    return super().form_valid(form)
+    response = super().form_valid(form)
+    Bid.objects.create(amount = form.instance.starting_price, user = self.request.user, auction = self.object)
+    return response
+
 
 class AuctionUpdate(LoginRequiredMixin, UpdateView):
   model = Auction
