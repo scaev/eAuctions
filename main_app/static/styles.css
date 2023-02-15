@@ -115,9 +115,11 @@ body {
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-auto-rows: 200px;
-  grid-gap: 120px;
+  grid-gap: 180px;
   justify-content: center;
   padding-top: 100px;
+  position: relative;
+  top: 80px;
 }
 
 .item {
@@ -135,6 +137,16 @@ body {
   flex-direction: column;
   gap: 0.5em;
   margin: 0.5em;
+}
+
+.details .row p {
+  color: #808080;
+  font-family: "Helvetica", sans-serif;
+}
+
+.details h3,
+.details p {
+  margin: 0;
 }
 
 .image {
