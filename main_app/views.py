@@ -78,10 +78,6 @@ def auctions_detail(request, auction_id):
   bids_current_auction = current_auction.bid_set.all()
   max_bid = bids_current_auction.order_by('-amount')[:1]
   max_bid_amount = max_bid.first().amount
-  # now = datetime.now()
-  # end_date = auction.end_date.replace(tzinfo=None)
-  # time_delta = end_date - now
-  # time_delta_str = time_delta.strftime("%Y, %m, %d, %H, %M, %S")
   return render(request, 'auctions/detail.html', {
     'auction': auction,'bids': bids, 'bid_form' : bid_form, 'max_bid_amount':max_bid_amount
   })
