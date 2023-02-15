@@ -1,16 +1,22 @@
-{% extends 'base.html' %} {% block content %}
-
-<h1>Auction List</h1>
-
-{% for auction in auctions %}
-<a href="{% url 'detail' auction.id %}">
-  <div class="card">
-    <div class="card-content">
-      <span class="card-title">{{ auction.title }}</span>
-      <p>Starting Price: {{ auction.starting_price }}</p>
-      <p>End Date: {{ auction.end_date }}</p>
-      <p>Description: {{ auction.description|linebreaks }}</p>
+{% extends 'base.html' %} {% block content %} {% for auction in auctions %}
+<div class="container">
+  <div class="item">
+    <div class="image">
+      {% for photo in auction.photo_set.all %}
+      <img class="camera" id="images" src="{{photo.url}}" alt="Auction Photo" />
+      {% empty %}
+      <div class="camera">No Photos Uploaded</div>
+      {% endfor %}
+    </div>
+    <div class="details">
+      <h3>{{ auction.title }}</h3>
+      <p>{{ auction.starting_price }}</p>
+      <div class="row">
+        <p>Bids: 0</p>
+        <p>Time Left: 6d 23h</p>
+      </div>
     </div>
   </div>
-</a>
+</div>
+
 {% endfor %} {% endblock %}
