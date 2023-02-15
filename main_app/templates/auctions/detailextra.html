@@ -1,7 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="auctiondetails.css" />
+{% extends 'base.html' %}
+{% block content %}
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/main_app/static/images/people.jpeg"
+    />
   </head>
   <body>
     <div class="header">
@@ -158,5 +162,4 @@
         miniPageContainers.style.display = "flex";
       });
     </script>
-  </body>
-</html>
+{% endblock %}
