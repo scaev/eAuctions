@@ -74,12 +74,16 @@ def auctions_detail(request, auction_id):
   auction = Auction.objects.get(id=auction_id)
   bids = auction.bid_set.all()
   bid_form = BiddingForm()
-  now = datetime.now()
-  end_date = auction.end_date.replace(tzinfo=None)
-  time_delta = end_date - now
+  current_auction = Auction.objects.get(id=auction_id)
+  bids_current_auction = current_auction.bid_set.all()
+  max_bid = bids_current_auction.order_by('-amount')[:1]
+  max_bid_amount = max_bid.first().amount
+  # now = datetime.now()
+  # end_date = auction.end_date.replace(tzinfo=None)
+  # time_delta = end_date - now
   # time_delta_str = time_delta.strftime("%Y, %m, %d, %H, %M, %S")
   return render(request, 'auctions/detail.html', {
-    'auction': auction,'bids': bids, 'bid_form' : bid_form, 'time_delta':time_delta
+    'auction': auction,'bids': bids, 'bid_form' : bid_form, 'max_bid_amount':max_bid_amount
   })
 
 
@@ -98,7 +102,7 @@ def add_bid(request, auction_id):
       new_bid.save()
     else:
       error_message = 'Please place a bigger amount - try again'
-  return redirect('detail', auction_id = auction_id)  
+  return redirect('detail', auction_id = auction_id,)  
   
 
 
