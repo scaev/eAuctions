@@ -6,6 +6,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from .models import Auction, User, Bid, Photo  
 from .forms import BiddingForm
+from datetime import date, datetime
+from django.utils import timezone
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -72,9 +74,14 @@ def auctions_detail(request, auction_id):
   auction = Auction.objects.get(id=auction_id)
   bids = auction.bid_set.all()
   bid_form = BiddingForm()
+  now = datetime.now()
+  end_date = auction.end_date.replace(tzinfo=None)
+  time_delta = end_date - now
+  # time_delta_str = time_delta.strftime("%Y, %m, %d, %H, %M, %S")
   return render(request, 'auctions/detail.html', {
-    'auction': auction,'bids': bids, 'bid_form' : bid_form
+    'auction': auction,'bids': bids, 'bid_form' : bid_form, 'time_delta':time_delta
   })
+
 
 @login_required
 def add_bid(request, auction_id):
