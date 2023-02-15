@@ -48,10 +48,12 @@
 
   <div class="right-panel">
     <h1>{{ auction.title }}</h1>
-    <h2>Time left: <span class="red">03:23:22</span> | Bids: 8</h2>
+    <h2>Time left: <span class="red">{{ time_delta }}</span> | Bids: 8</h2>
+
+    <!-- <div id="countdown"></div> -->
     <h2>
-      Current Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${{
-      auction.starting_price }}
+      Current Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      ${{auction.starting_price}}
     </h2>
     <h2>
       My Bid:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
@@ -87,5 +89,25 @@
     <br />
   </div>
 </div>
+
+<!-- <script>
+  function updateCountdown() {
+    var now = new Date();
+    var end_date = new Date('{{ end_date|date:"Y-m-d H:i:s" }}');
+    var time_remaining = end_date - now;
+    var seconds_remaining = Math.floor(time_remaining / 1000);
+
+    if (seconds_remaining < 0) {
+      document.getElementById("countdown").innerHTML = "Auction has ended.";
+    } else {
+      var minutes = Math.floor(seconds_remaining / 60);
+      var seconds = seconds_remaining % 60;
+      var countdown = "Time remaining: " + minutes + "m " + seconds + "s";
+      document.getElementById("countdown").innerHTML = countdown;
+    }
+  }
+
+  setInterval(updateCountdown, 1000);
+</script> -->
 
 {% endblock %}
