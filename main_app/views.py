@@ -66,6 +66,8 @@ def about(request):
 
 def auctions_index(request):
   auctions = Auction.objects.all()
+
+
   return render(request, 'auctions/index.html', {
     'auctions': auctions
   })
