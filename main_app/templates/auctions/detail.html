@@ -22,16 +22,16 @@
         <div></div>
       </div>
       <form
-          action="{% url 'add_photo' auction.id %}"
-          enctype="multipart/form-data"
-          method="POST"
-          class="card-panel"
-        >
-          {% csrf_token %}
-          <input type="file" name="photo-file" />
-          <br /><br />
-          <button type="submit" class="btn">Upload Photo</button>
-        </form>
+        action="{% url 'add_photo' auction.id %}"
+        enctype="multipart/form-data"
+        method="POST"
+        class="card-panel"
+      >
+        {% csrf_token %}
+        <input type="file" name="photo-file" />
+        <br /><br />
+        <button type="submit" class="btn">Upload Photo</button>
+      </form>
     </div>
     <div class="product-info">
       <h3>Product Information</h3>
@@ -178,9 +178,20 @@
     if (seconds_remaining < 0) {
       document.getElementById("countdown").innerHTML = "Auction has ended.";
     } else {
-      var minutes = Math.floor(seconds_remaining / 60);
+      var days = Math.floor(seconds_remaining / (3600 * 24));
+      var hours = Math.floor((seconds_remaining % (3600 * 24)) / 3600);
+      var minutes = Math.floor((seconds_remaining % 3600) / 60);
       var seconds = seconds_remaining % 60;
-      var countdown = "Time remaining: " + minutes + "m " + seconds + "s";
+      var countdown =
+        "Time remaining: " +
+        days +
+        " days" +
+        hours +
+        " hrs" +
+        minutes +
+        "min " +
+        seconds +
+        "s";
       document.getElementById("countdown").innerHTML = countdown;
     }
   }
