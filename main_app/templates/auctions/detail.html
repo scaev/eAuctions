@@ -14,7 +14,14 @@
         {% empty %}
         <div class="card-panel teal-text center-align">No Photos Uploaded</div>
         {% endfor %}
-        <form
+      </div>
+      <div class="secondary-images">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <form
           action="{% url 'add_photo' auction.id %}"
           enctype="multipart/form-data"
           method="POST"
@@ -25,13 +32,6 @@
           <br /><br />
           <button type="submit" class="btn">Upload Photo</button>
         </form>
-      </div>
-      <div class="secondary-images">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
     </div>
     <div class="product-info">
       <h3>Product Information</h3>
@@ -40,27 +40,23 @@
       <p><strong>Item Category</strong>: Electronics</p>
     </div>
   </div>
-
-  <div class="card-action">
-    <a href="{% url 'auctions_update' auction.id %}">Edit</a>
-    <a href="{% url 'auctions_delete' auction.id %}">Delete</a>
-  </div>
-
   <div class="right-panel">
     <h1>{{ auction.title }}</h1>
     <h2>
-
-      <div id="countdown"></div>
-    </span> Bids: {{ bids|length }}
+      Time left: <span class="red"><div id="countdown"></div></span> | Bids:
+      {{bids|length}}
     </h2>
-    
-    <h2>
-      Base Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      ${{auction.starting_price}}
-    </h2>
+    <div class="card-action">
+      <a href="{% url 'auctions_update' auction.id %}">Edit</a>
+      <a href="{% url 'auctions_delete' auction.id %}">Delete</a>
+    </div>
     <h2>
       Current Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       ${{max_bid_amount}}
+    </h2>
+    <h2>
+      Base Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      ${{auction.starting_price}}
     </h2>
     <h2>
       My Bid:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
@@ -70,7 +66,15 @@
       />
     </h2>
     <button type="button" class="update-button">Place My Bid</button>
-    <button type="button" class="delete-button">Delete My Bid</button>
+    <button type="button" class="delete-button" id="delete-bid">
+      Delete My Bid
+    </button>
+    <button type="button" class="delete-listing" id="delete-listing">
+      Delete My Listing
+    </button>
+
+    <div id="mini-page-container"></div>
+    <div id="second-mini-page-container"></div>
 
     <table>
       <tr>
@@ -96,7 +100,74 @@
     <br />
   </div>
 </div>
+<script>
+  var deleteButton = document.getElementById("delete-bid");
+  var miniPageContainer = document.getElementById("mini-page-container");
 
+  deleteButton.addEventListener("click", function () {
+    var miniPageContent = document.createElement("div");
+    miniPageContent.className = "mini-page";
+    miniPageContent.innerHTML = `
+    <div class="mini-page-content">
+      <h3 class="delete-heading">Are you sure you want to delete your bid?</h3>
+      <h5>Your bid will be permanently removed.</h5>
+      <button type="button" class="cancel-button">Cancel</button>
+      <button type="button" class="confirm-button">Confirm</button>
+    </div>
+  `;
+
+    var cancelButton = miniPageContent.querySelector(".cancel-button");
+    var confirmButton = miniPageContent.querySelector(".confirm-button");
+
+    cancelButton.addEventListener("click", function () {
+      miniPageContainer.style.display = "none";
+    });
+
+    confirmButton.addEventListener("click", function () {
+      miniPageContainer.innerHTML =
+        "<p><span class='deleted-text'>Your bid has been deleted.</span></p>";
+    });
+
+    miniPageContainer.innerHTML = "";
+    miniPageContainer.appendChild(miniPageContent);
+    miniPageContainer.style.display = "flex";
+  });
+</script>
+<script>
+  const deleteListingButton = document.getElementById("delete-listing");
+  const miniPageContainers = document.getElementById(
+    "second-mini-page-container"
+  );
+
+  deleteListingButton.addEventListener("click", function () {
+    var miniPageContents = document.createElement("div");
+    miniPageContents.className = "mini-page";
+    miniPageContents.innerHTML = `
+    <div class="mini-page-content">
+      <h3 class="delete-heading">Are you sure you want to delete your listing?</h3>
+      <h5>Your listing will be permanently removed.</h5>
+      <button type="button" class="cancel-button">Cancel</button>
+      <button type="button" class="confirm-button">Confirm</button>
+    </div>
+  `;
+
+    var cancelButtons = miniPageContent.querySelector(".cancel-button");
+    var confirmButtons = miniPageContent.querySelector(".confirm-button");
+
+    cancelButtons.addEventListener("click", function () {
+      miniPageContainer.style.display = "none";
+    });
+
+    confirmButtons.addEventListener("click", function () {
+      miniPageContainer.innerHTML =
+        "<p><span class='deleted-text'>Your listing has been deleted.</span></p>";
+    });
+
+    miniPageContainers.innerHTML = "";
+    miniPageContainers.appendChild(miniPageContents);
+    miniPageContainers.style.display = "flex";
+  });
+</script>
 <script>
   function updateCountdown() {
     var now = new Date();
@@ -116,5 +187,4 @@
 
   setInterval(updateCountdown, 1000);
 </script>
-
 {% endblock %}
