@@ -6,9 +6,9 @@
 
 ### 🧑‍💻 Gautham Battineni
 
-### 🧑‍💻 Kelvin Chan
-
 ### 🧑‍💻 Kaan Karadag
+
+### 🧑‍💻 Kelvin Chan
 
 ## Meet the Design Team! 🤝
 
@@ -18,10 +18,17 @@
 
 ## Wireframing & Concept 📝
 
-![wireframe](-)
+![wireframe](https://i.imgur.com/ISFpMoe.png)
+![wireframe](https://i.imgur.com/erkDRNa.jpg)
+![wireframe](https://i.imgur.com/d3tneyT.png)
+
+Prior to project start, wireframing was completed by design team to show ideal project design and flow. The above screenshot details a basic design concept prior to beginning the project.
+
 ![ERD](https://i.imgur.com/X1CvuI6.png)
 
 Project planning materials are held in [this](https://trello.com/b/N6PWQ1w3/project-3-reauction) public Trello board.
+
+Project wireframe and design materials are held in [this](https://app.zeplin.io/project/63e5457f2c2969191b237a65) public Zeplin board.
 
 ## Technologies Used 💻
 
@@ -46,3 +53,6 @@ Project planning materials are held in [this](https://trello.com/b/N6PWQ1w3/proj
 ## Icebox Features 🧊
 
 - Add items to watchlist without having to bid
+- Have categories for the products being auctioned - preferably dropdown menu
+- Display a message to the winner of a bid and to the seller when the bid closes successfully
+- Adding calendar template for sell view
