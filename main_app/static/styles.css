@@ -71,7 +71,6 @@ body {
   }
 }
 
-
 .container {
   display: flex;
   flex-direction: column;
@@ -192,25 +191,23 @@ body {
 }
 
 /* about page */
-
-.container1 {
+/* 
+.containerr {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  /* align-items: center;
+  min-height: 100vh; */
+/* align-items: center;
   height: 100vh;
   padding-inline: 10vh;
   padding-block: 5vh; */
-}
+/* } */
 
-.top-panel {
-  flex: 50;
-}
+.containerr {
+  display: flex;
 
-.bottom-panel {
-  flex: 50;
-
-  background-color: rgb(65, 65, 65);
+  height: 100vh;
+  padding-inline: 10vh;
+  padding-block: 5vh;
 }
 
 .auction-experience {
@@ -219,11 +216,19 @@ body {
   background-color: #f2f2f2;
 
   position: absolute;
-  top: 180px;
-  left: 450px;
+  top: -30px;
+  left: 30px;
 }
 
-.grey-square {
+.gray-box {
+  background-color: #f0f0f0;
+  padding: 20px;
+  box-sizing: border-box; /* include padding in box sizing */
+  display: inline-block; /* make the box wrap around the content */
+  width: 100%; /* make the box take up the full width of the webpage */
+}
+
+.grey-squar {
   width: 200px;
   height: 130%;
   padding: 20px;
@@ -261,13 +266,20 @@ h3.about-us {
 .mission {
   width: 400px;
   padding: 20px;
-  color: white;
-
   position: absolute;
-  bottom: 180px;
-  left: 450px;
+  bottom: -300px;
+  left: 50px;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 130%;
+  text-align: center;
+  word-wrap: break-word;
+  display: inline-block;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.mission {
+  max-width: auto;
+  margin: 0 auto;
 }
 
 /* auction details */
