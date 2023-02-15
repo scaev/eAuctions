@@ -64,13 +64,6 @@
   }
 }
 
-.Desktop---1 {
-  width: 1440px;
-  height: 1985px;
-  flex-grow: 0;
-  padding: 0 0 36px;
-  background-color: #fff;
-}
 
 .container {
   display: flex;

@@ -22,16 +22,16 @@
         <div></div>
       </div>
       <form
-          action="{% url 'add_photo' auction.id %}"
-          enctype="multipart/form-data"
-          method="POST"
-          class="card-panel"
-        >
-          {% csrf_token %}
-          <input type="file" name="photo-file" />
-          <br /><br />
-          <button type="submit" class="btn">Upload Photo</button>
-        </form>
+        action="{% url 'add_photo' auction.id %}"
+        enctype="multipart/form-data"
+        method="POST"
+        class="card-panel"
+      >
+        {% csrf_token %}
+        <input type="file" name="photo-file" />
+        <br /><br />
+        <button type="submit" class="btn">Upload Photo</button>
+      </form>
     </div>
     <div class="product-info">
       <h3>Product Information</h3>
@@ -59,11 +59,18 @@
       ${{auction.starting_price}}
     </h2>
     <h2>
-      My Bid:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+      My Bid:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <!-- <input
         type="text"
         value="$0.00"
         class="price-input"
-      />
+      /> -->
+      <form action="{% url 'add_bid' auction.id %}" method="POST">
+        {% csrf_token %}
+        <!-- Render the inputs -->
+        {{ bid_form.as_p }}
+        <input type="submit" class="btn" value="Place My Bid" />
+      </form>
     </h2>
     <button type="button" class="update-button">Place My Bid</button>
     <button type="button" class="delete-button" id="delete-bid">
@@ -90,14 +97,6 @@
       </tr>
       {% endfor %}
     </table>
-
-    <form action="{% url 'add_bid' auction.id %}" method="POST">
-      {% csrf_token %}
-      <!-- Render the inputs -->
-      {{ bid_form.as_p }}
-      <input type="submit" class="btn" value="Place My Bid" />
-    </form>
-    <br />
   </div>
 </div>
 <script>
