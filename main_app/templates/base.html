@@ -1,61 +1,37 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>eAuctions</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
+    <link rel="stylesheet" type="text/css" href="../static/styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-
-    <link rel="stylesheet" type="text/css" href="{% static 'about.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'sell.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'auctiondetails.css' %}"
-    />
-    <!-- <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" /> -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <header class="navbar-fixed">
-      <nav>
-        <div class="nav-wrapper">
-          <ul>
-            <li>
-              <a href="{% url 'home' %}" class="left brand-logo"
-                >&nbsp;&nbsp;eAuctions</a
-              >
-            </li>
-          </ul>
-          <ul class="right">
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'index' %}">All Auctions</a></li>
-            {% if user.is_authenticated %}
-            <li><a href="{% url 'auctions_create' %}">Sell</a></li>
-            <li><a href="{% url 'logout' %}">Log Out</a></li>
-            {% else %}
-            <li><a href="{% url 'signup' %}">Sign Up</a></li>
-            <li><a href="{% url 'login' %}">Log In</a></li>
-            {% endif %}
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="container">{% block content %} {% endblock %}</main>
-    <footer class="page-footer">
-      <div class="right">All Rights Reserved, &copy; 2023 eAuctions &nbsp;</div>
-    </footer>
+    <div class="topnav" id="myTopnav">
+      <span class="eAuction">
+        <a href="#home" class="active">eAuctions</a>
+     
+      <a href="#about">About</a>
+      <a href="#allauctionitems">All Auction Items</a>
+      <a href="#sell">Sell</a>
+      <a href="#login">Login</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
   </body>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
 </html>
