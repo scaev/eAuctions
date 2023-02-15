@@ -1,10 +1,17 @@
 /* nav bar */
-
+body {
+  margin: 0;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas:
+    "nav"
+    "main";
+}
 .topnav {
   background-color: #1a254c;
   overflow: hidden;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .topnav a {
