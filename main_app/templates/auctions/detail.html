@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="container">
+<div class="container-1">
   <div class="left-panel">
     <div class="images">
       <div class="main-image">
@@ -50,7 +50,8 @@
     <h1>{{ auction.title }}</h1>
     <h2>Time left: <span class="red">03:23:22</span> | Bids: 8</h2>
     <h2>
-      Current Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${{ auction.starting_price }}
+      Current Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${{
+      auction.starting_price }}
     </h2>
     <h2>
       My Bid:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
@@ -61,7 +62,7 @@
     </h2>
     <button type="button" class="update-button">Place My Bid</button>
     <button type="button" class="delete-button">Delete My Bid</button>
- 
+
     <table>
       <tr>
         <th>Bid Amount</th>
@@ -84,7 +85,6 @@
       <input type="submit" class="btn" value="Place My Bid" />
     </form>
     <br />
-
   </div>
 </div>
 
