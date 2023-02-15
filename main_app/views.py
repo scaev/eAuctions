@@ -6,6 +6,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from .models import Auction, User, Bid, Photo  
 from .forms import BiddingForm
+from datetime import date, datetime
+from django.utils import timezone
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -72,9 +74,14 @@ def auctions_detail(request, auction_id):
   auction = Auction.objects.get(id=auction_id)
   bids = auction.bid_set.all()
   bid_form = BiddingForm()
+  current_auction = Auction.objects.get(id=auction_id)
+  bids_current_auction = current_auction.bid_set.all()
+  max_bid = bids_current_auction.order_by('-amount')[:1]
+  max_bid_amount = max_bid.first().amount
   return render(request, 'auctions/detail.html', {
-    'auction': auction,'bids': bids, 'bid_form' : bid_form
+    'auction': auction,'bids': bids, 'bid_form' : bid_form, 'max_bid_amount':max_bid_amount
   })
+
 
 @login_required
 def add_bid(request, auction_id):
@@ -91,7 +98,7 @@ def add_bid(request, auction_id):
       new_bid.save()
     else:
       error_message = 'Please place a bigger amount - try again'
-  return redirect('detail', auction_id = auction_id)  
+  return redirect('detail', auction_id = auction_id,)  
   
 
 

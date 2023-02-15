@@ -1,0 +1,120 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container-1">
+  <div class="left-panel">
+    <div class="images">
+      <div class="main-image">
+        {% for photo in auction.photo_set.all %}
+        <img
+          class="responsive-img card-panel"
+          id="images"
+          src="{{photo.url}}"
+          alt="Auction Photo"
+        />
+        {% empty %}
+        <div class="card-panel teal-text center-align">No Photos Uploaded</div>
+        {% endfor %}
+        <form
+          action="{% url 'add_photo' auction.id %}"
+          enctype="multipart/form-data"
+          method="POST"
+          class="card-panel"
+        >
+          {% csrf_token %}
+          <input type="file" name="photo-file" />
+          <br /><br />
+          <button type="submit" class="btn">Upload Photo</button>
+        </form>
+      </div>
+      <div class="secondary-images">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="product-info">
+      <h3>Product Information</h3>
+      <p>{{ auction.description }}</p>
+      <p><strong>Condition</strong>: Open Box</p>
+      <p><strong>Item Category</strong>: Electronics</p>
+    </div>
+  </div>
+
+  <div class="card-action">
+    <a href="{% url 'auctions_update' auction.id %}">Edit</a>
+    <a href="{% url 'auctions_delete' auction.id %}">Delete</a>
+  </div>
+
+  <div class="right-panel">
+    <h1>{{ auction.title }}</h1>
+    <h2>
+
+      <div id="countdown"></div>
+    </span> Bids: {{ bids|length }}
+    </h2>
+    
+    <h2>
+      Base Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      ${{auction.starting_price}}
+    </h2>
+    <h2>
+      Current Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      ${{max_bid_amount}}
+    </h2>
+    <h2>
+      My Bid:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+        type="text"
+        value="$0.00"
+        class="price-input"
+      />
+    </h2>
+    <button type="button" class="update-button">Place My Bid</button>
+    <button type="button" class="delete-button">Delete My Bid</button>
+
+    <table>
+      <tr>
+        <th>Bid Amount</th>
+        <th>Date Created</th>
+        <th>User</th>
+      </tr>
+      {% for bid in bids %}
+      <tr>
+        <td>{{ bid.amount }}</td>
+        <td>{{ bid.date_created }}</td>
+        <td>{{ bid.user.username }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <form action="{% url 'add_bid' auction.id %}" method="POST">
+      {% csrf_token %}
+      <!-- Render the inputs -->
+      {{ bid_form.as_p }}
+      <input type="submit" class="btn" value="Place My Bid" />
+    </form>
+    <br />
+  </div>
+</div>
+
+<script>
+  function updateCountdown() {
+    var now = new Date();
+    var end_date = new Date('{{ auction.end_date|date:"Y-m-d H:i:s" }}');
+    var time_remaining = end_date - now;
+    var seconds_remaining = Math.floor(time_remaining / 1000);
+
+    if (seconds_remaining < 0) {
+      document.getElementById("countdown").innerHTML = "Auction has ended.";
+    } else {
+      var minutes = Math.floor(seconds_remaining / 60);
+      var seconds = seconds_remaining % 60;
+      var countdown = "Time remaining: " + minutes + "m " + seconds + "s";
+      document.getElementById("countdown").innerHTML = countdown;
+    }
+  }
+
+  setInterval(updateCountdown, 1000);
+</script>
+
+{% endblock %}
