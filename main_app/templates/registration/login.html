@@ -4,7 +4,7 @@
   <div class="left-panel">
     <div class="images">
       <div class="main-image">
-        <img src="/images/people.jpeg" width="650" alt="" />
+        <img src="/static/images/people.jpeg" width="650" alt="" />
       </div>
     </div>
   </div>
@@ -19,10 +19,20 @@
     >
       Please put the correct email and password below to enter your account:
     </div>
-    <form method="POST" action="{% url 'login' %}">
+    <!-- <form method="POST" action="{% url 'login' %}">
       {% csrf_token %} {{ form.as_p }}
       <input type="hidden" name="next" value="{{ next }}" />
       <button type="submit" class="btn">Log In</button>
+    </form> -->
+
+    <form method="POST" action="{% url 'login' %}">
+      {% csrf_token %}
+      <div class="Rectangle-52">{{ form.username }}</div>
+      <div class="Rectangle-52">{{ form.password }}</div>
+      <input type="hidden" name="next" value="{{ next }}" />
+      <div class="login-button">
+        <button type="submit" class="btn">Log In</button>
+      </div>
     </form>
 
     <span class="Not-a-member-Join-now">

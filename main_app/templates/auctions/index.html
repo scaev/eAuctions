@@ -2,14 +2,19 @@
 <div class="container">
   <div class="item">
     <div class="image">
-      {% for photo in auction.photo_set.all %}
-      <img class="camera" id="images" src="{{photo.url}}" alt="Auction Photo" />
-      {% empty %}
+      {%if auction.photo_set.first%}
+      <img
+        class="camera"
+        id="images"
+        src="{{auction.photo_set.first.url}}"
+        alt="Auction Photo"
+      />
+      {%else%}
       <div class="camera">No Photos Uploaded</div>
-      {% endfor %}
+      {% endif %}
     </div>
     <div class="details">
-      <h3><a href="{% url 'detail' auction.id %}">{{ auction.title }}</a></h3>
+      <h3><a href="{% url 'detail' auction.id %}" id="index_auction_title">{{ auction.title }}</a></h3>
       <p>$ {{ auction.starting_price }}</p>
       <div class="row">
         <p>Bids: {{auction.bid_set.all|length}}&nbsp;&nbsp;&nbsp;&nbsp;</p>
