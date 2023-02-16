@@ -301,6 +301,47 @@ h3.about-us {
 .red {
   color: red;
 }
+input#id_amount {
+  /* background-color: darkorange; */
+  color: darkorange;
+  border: 2px solid darkorange;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin-top: 2rem;
+  width: 80%;
+}
+
+button#delete-listing,.delete-listing {
+  color: darkorange;
+  border: 2px solid darkorange;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.place-button {
+  background-color: darkorange;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  width: 100%;
+}
+
 
 .update-button {
   background-color: darkorange;
@@ -339,6 +380,10 @@ h3.about-us {
   cursor: pointer;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   margin-top: 2rem;
+}
+
+.input.button {
+  color: darkorange;
 }
 
 .price-input {
