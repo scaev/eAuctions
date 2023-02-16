@@ -3,6 +3,7 @@
 /* nav bar */
 body {
   margin: 0;
+  font-family: Raleway;
   grid-template-rows: 50px 1fr;
   grid-template-areas:
     "nav"
@@ -129,7 +130,7 @@ body {
 
 .details .row p {
   color: #808080;
-  font-family: "Helvetica", sans-serif;
+  font-family: Raleway;
 }
 
 .details h3,
@@ -215,7 +216,7 @@ body {
   width: 100%;
   font-size: 20px;
   line-height: 30px;
-  font-family: "Times New Roman", Times, serif;
+  font-family: Raleway;
 }
 
 @media only screen and (max-width: 500px) {
@@ -294,7 +295,7 @@ button#delete-listing,
 }
 
 .place-button {
-  background-color: darkorange;
+  background-color: rgb(0, 165, 36);
   color: white;
   border: 2px solid white;
   border-radius: 5px;
@@ -409,14 +410,14 @@ th {
   padding: 2px;
   text-align: left;
   padding-left: 80px;
-  font-family: "Open Sans", sans-serif;
+  font-family: Raleway;
   font-weight: 200;
 }
 
 .header h1 {
   display: inline-block;
   margin-right: 150px;
-  font-family: "Open Sans", sans-serif;
+  font-family: Raleway;
   font-weight: 300;
   font-size: 20px;
 }
@@ -475,7 +476,7 @@ th {
   height: 200px;
   text-align: center;
   border-radius: 10px;
-  font-family: Arial, sans-serif;
+  font-family: Raleway;
   color: rgba(128, 128, 128, 0.804);
   font-weight: 100;
 }
@@ -484,8 +485,7 @@ th {
   font-size: 24px;
   font-weight: 200;
   margin-bottom: 10px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: Raleway;
   color: black;
 }
 
@@ -582,7 +582,7 @@ tr:hover {
   flex-grow: 0;
 
   margin: 0 14px 25px 350px;
-  font-family: Inter;
+  font-family: Raleway;
   font-size: 14px;
   font-weight: 500;
   font-stretch: normal;
@@ -707,7 +707,7 @@ input[type="full-name"] {
   box-sizing: border-box;
   background-color: lightgrey;
   outline: none;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: Raleway;
 
   text-align: center;
   border: none;
@@ -722,7 +722,7 @@ input[type="email"] {
   box-sizing: border-box;
   background-color: lightgrey;
   outline: none;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: Raleway;
 
   text-align: center;
   border: none;
@@ -736,7 +736,7 @@ input[type="password"] {
   box-sizing: border-box;
   background-color: lightgrey;
   outline: none;
-  font-family: "Times New Roman", Times, serif;
+  font-family: Raleway;
   text-align: center;
   border: none;
 }
@@ -745,7 +745,7 @@ input[type="password"] {
   width: 242px;
   height: 16px;
   margin: 25px 255px 118px 380px;
-  font-family: Inter;
+  font-family: Raleway;
   font-size: 14px;
   font-weight: 500;
   font-stretch: normal;
@@ -861,7 +861,7 @@ input[type="title"] {
   box-sizing: border-box;
   background-color: lightgrey;
   outline: none;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: Raleway;
   text-align: center;
   border: none;
 }
@@ -874,7 +874,7 @@ input[type="title"] {
   box-sizing: border-box;
   background-color: lightgrey;
   outline: none;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: Raleway;
   text-align: center;
   border: none;
 }
@@ -887,7 +887,7 @@ input[type="title"] {
   box-sizing: border-box;
   background-color: lightgrey;
   outline: none;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: Raleway;
   text-align: center;
   border: none;
 }
@@ -928,7 +928,7 @@ label {
   box-sizing: border-box;
   background-color: lightgrey;
   outline: none;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: Raleway;
   text-align: center;
   border: none;
 }
@@ -967,8 +967,6 @@ label {
   margin-left: 600px;
 }
 
-
-
 /* About Us Page */
 
 .about-us {
@@ -988,12 +986,11 @@ label {
   padding: 20px;
   position: absolute;
   left: 50px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Raleway;
   line-height: 130%;
   text-align: justify;
   word-wrap: break-word;
   display: inline-block;
-  font-family: "Times New Roman", Times, serif;
   align-self: center;
 }
 
@@ -1001,9 +998,7 @@ label {
   margin: 15px;
 }
 
-
 /* add auction */
-
 
 /* form {
   max-width: 600px;
@@ -1024,7 +1019,6 @@ label {
   padding-top: 20px;
   position: relative;
   margin-left: 650px;
-
 }
 
 /* table {
@@ -1067,8 +1061,6 @@ input#id_starting_price {
   border-radius: 5px;
   border: 1px solid #dcdcdc;
 }
-
-
 
 select {
   appearance: none;

@@ -12,9 +12,6 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     
 
-
-    
-
 class Auction(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
