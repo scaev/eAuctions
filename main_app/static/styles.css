@@ -339,6 +339,7 @@ button#delete-listing,
   width: 100%;
 }
 
+
 #uploading_photo {
   /* background-color: darkorange; */
   color: darkorange;
@@ -986,4 +987,6 @@ label {
   word-wrap: break-word;
   display: inline-block;
   font-family: "Times New Roman", Times, serif;
+  align-self: center;
+  /* margin: auto; */
 }

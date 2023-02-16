@@ -10,6 +10,7 @@ class BiddingForm(ModelForm):
         fields = ['amount']
 
 
+
 class UserSignUpForm(UserCreationForm):
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
@@ -17,4 +18,5 @@ class UserSignUpForm(UserCreationForm):
         model = User
         fields = ("username", "password")
     
+
 
