@@ -3,8 +3,8 @@ from django.urls import reverse
 from datetime import date 
 from django.contrib.auth.models import User
 
-CONDITION_CHOICES = (('new','NEW'), ('used','USED'), ('refurbished','REFURBISHED'))
-CATEGORY_CHOICES = (('antiques', 'ANTIQUES'),('art', 'ART'),('electronics','ELECTRONICS'),('furniture', 'FURNITURE'), ('jewelry', 'Jewelry'),('tools', 'TOOLS'), ('others', 'OTHERS') )
+CONDITION_CHOICES = (('New','NEW'), ('Used','USED'), ('Refurbished','REFURBISHED'))
+CATEGORY_CHOICES = (('Antiques', 'ANTIQUES'),('Art', 'ART'),('Electronics','ELECTRONICS'),('Furniture', 'FURNITURE'), ('Jewelry', 'JEWELRY'),('Tools', 'TOOLS'), ('Others', 'OTHERS') )
 
 
 
