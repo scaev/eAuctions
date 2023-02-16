@@ -35,8 +35,8 @@
     <div class="product-info">
       <h3>Product Information</h3>
       <p>{{ auction.description }}</p>
-      <p><strong>Condition</strong>: Open Box</p>
-      <p><strong>Item Category</strong>: Electronics</p>
+      <p><strong>Condition</strong>: {{ auction.condition }}</p>
+      <p><strong>Item Category</strong>: {{ auction.category }}</p>
     </div>
   </div>
   <div class="right-panel">
@@ -90,7 +90,6 @@
     <table id="bids">
       <thead>
         <tr>
-          <th></th>
           <th>Bid Amount</th>
           <th>Date Created</th>
           <th>User</th>
@@ -99,7 +98,6 @@
       {% for bid in bids %}
       <tbody>
         <tr>
-          <td><input type="checkbox" id="{{ bid.id }}" /></td>
           <td>{{ bid.amount }}</td>
           <td>{{ bid.date_created }}</td>
           <td>{{ bid.user.username }}</td>

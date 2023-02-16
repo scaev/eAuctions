@@ -40,7 +40,7 @@ class AuctionDelete(LoginRequiredMixin, DeleteView):
   model = Auction
   success_url = '/auctions'
 
-
+@login_required
 def add_photo(request, auction_id):
   photo_file = request.FILES.get('photo-file', None)
   if photo_file:

@@ -51,12 +51,11 @@ Other users can then bid on your auction by entering a higher price on the aucti
 ## Wireframing & Concept 📝
 
 ![wireframe](https://i.imgur.com/ISFpMoe.png)
-![wireframe](https://i.imgur.com/erkDRNa.jpg)
 ![wireframe](https://i.imgur.com/d3tneyT.png)
 
 Prior to project start, wireframing was completed by design team to show ideal project design and flow. The above screenshot details a basic design concept prior to beginning the project.
 
-![ERD](https://i.imgur.com/X1CvuI6.png)
+![ERD](https://i.imgur.com/l13efHE.png)
 
 Project planning materials are held in [this](https://trello.com/b/N6PWQ1w3/project-3-reauction) public Trello board.
 
