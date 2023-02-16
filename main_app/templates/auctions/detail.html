@@ -6,7 +6,6 @@
       <div class="main-image">
         {% for photo in auction.photo_set.all %}
         <img
-          class="responsive-img card-panel"
           id="images"
           src="{{photo.url}}"
           alt="Auction Photo"
@@ -15,12 +14,12 @@
         <div class="card-panel teal-text center-align">No Photos Uploaded</div>
         {% endfor %}
       </div>
-      <div class="secondary-images">
+      <!-- <div class="secondary-images">
         <div></div>
         <div></div>
         <div></div>
         <div></div>
-      </div>
+      </div> -->
       <form
         action="{% url 'add_photo' auction.id %}"
         enctype="multipart/form-data"
@@ -43,7 +42,7 @@
   <div class="right-panel">
     <h1>{{ auction.title }}</h1>
     <h2>
-      Time left: <span class="red"><div id="countdown"></div></span> | Bids:
+      Time left: <span id="countdown" class="red"></span> | Bids:
       {{bids|length}}
     </h2>
     <div class="card-action">
@@ -182,7 +181,6 @@
       var minutes = Math.floor((seconds_remaining % 3600) / 60);
       var seconds = seconds_remaining % 60;
       var countdown =
-        "Time remaining: " +
         days +
         " days " +
         hours +
