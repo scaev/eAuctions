@@ -6,3 +6,7 @@ class BiddingForm(ModelForm):
         model = Bid
         fields = ['amount']
 
+
+
+
+

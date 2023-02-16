@@ -4,7 +4,7 @@ import os
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
-from .models import Auction, User, Bid, Photo  
+from .models import Auction, User, Bid, Photo
 from .forms import BiddingForm
 from datetime import date, datetime
 from django.utils import timezone
@@ -18,7 +18,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 class AuctionCreate(LoginRequiredMixin, CreateView):
   model = Auction
-  fields = ['title', 'description', 'starting_price', 'end_date' ]
+  fields = ['title', 'description', 'starting_price', 'end_date', 'condition', 'category' ]
 
   def form_valid(self, form):
     form.instance.user = self.request.user
@@ -80,8 +80,10 @@ def auctions_detail(request, auction_id):
   bids_current_auction = current_auction.bid_set.all()
   max_bid = bids_current_auction.order_by('-amount')[:1]
   max_bid_amount = max_bid.first().amount
+  condition = Auction.objects.filter(condition="used")
+  category = Auction.objects.filter(category="others")
   return render(request, 'auctions/detail.html', {
-    'auction': auction,'bids': bids, 'bid_form' : bid_form, 'max_bid_amount':max_bid_amount
+    'auction': auction,'bids': bids, 'bid_form' : bid_form, 'max_bid_amount':max_bid_amount, 'condition':condition, 'category':category,
   })
 
 

@@ -315,7 +315,8 @@ input#id_amount {
   width: 80%;
 }
 
-button#delete-listing,.delete-listing {
+button#delete-listing,
+.delete-listing {
   color: darkorange;
   border: 2px solid darkorange;
   border-radius: 5px;
@@ -341,7 +342,6 @@ button#delete-listing,.delete-listing {
   margin-top: 2rem;
   width: 100%;
 }
-
 
 .update-button {
   background-color: darkorange;
@@ -925,4 +925,6 @@ label {
   word-wrap: break-word;
   display: inline-block;
   font-family: "Times New Roman", Times, serif;
+  align-self: center;
+  /* margin: auto; */
 }

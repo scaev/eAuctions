@@ -3,11 +3,14 @@ from django.urls import reverse
 from datetime import date 
 from django.contrib.auth.models import User
 
+CONDITION_CHOICES = (('new','NEW'), ('used','USED'), ('refurbished','REFURBISHED'))
+CATEGORY_CHOICES = (('antiques', 'ANTIQUES'),('art', 'ART'),('electronics','ELECTRONICS'),('furniture', 'FURNITURE'), ('jewelry', 'Jewelry'),('tools', 'TOOLS'), ('others', 'OTHERS') )
+
 
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    favorite_color = models.CharField(max_length=50)
+    # favorite_color = models.CharField(max_length=50)
 
 
     
@@ -18,8 +21,9 @@ class Auction(models.Model):
     starting_price = models.DecimalField(max_digits=10, decimal_places=2)
     end_date = models.DateTimeField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    category = models.CharField(max_length=11, choices=CATEGORY_CHOICES, default='others')
+    condition = models.CharField(max_length=11, choices=CONDITION_CHOICES, default='used')
 
-    
     def __str__(self):
         return self.title
     
@@ -47,3 +51,8 @@ class Photo(models.Model):
 
     def __str__(self):
         return f"Photo for auction_id: {self.auction_id} @{self.url}"
+
+# class Categ_Cond(models.Model):
+#     category = models.CharField(max_length=11, choices=CATEGORY_CHOICES, default='others')
+#     condition = models.CharField(max_length=11, choices=CONDITION_CHOICES, default='used')
+#     auction = models.ForeignKey(Auction, on_delete=models.CASCADE)
