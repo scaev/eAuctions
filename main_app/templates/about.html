@@ -1,22 +1,69 @@
-{% extends 'base.html' %} {% block content %}
+{% load static %}
 
-<img
-  src="https://i.imgur.com/CHFkaH2.png"
-  alt="about us"
-  class="about-us"
-  id="about-us-id"
-/>
-<div class="mission">
-  <h2 id="mission_head">Our Mission</h2>
-  <br /><br />
-  <p id="mission_body">
-    Our mission is to create a platform that empowers individuals to buy goods
-    in a fair and efficient manner. Our goal is to become the leading online
-    marketplace for auctioning, where the power of technology meets the
-    tradition of bargaining. We believe that everyone should have access to the
-    opportunities and excitement of buying at auctions, and it is our mission to
-    make that a reality for all.
-  </p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="topnav" id="myTopnav">
+      <a href="{% url 'index' %}" id="nav_logo"
+        ><span style="color: #ff7a59">e</span>Auctions</a
+      >
 
-{% endblock %}
+      <a href="{% url 'about' %}">About</a>
+      <!-- <a href="{% url 'home' %}">Home</a> -->
+      <a href="{% url 'index' %}">All Auction Items</a>
+      <a href="{% url 'auctions_create' %}">Sell</a>
+      {% if user.is_authenticated %}
+      <a href="{% url 'logout' %}">Logout</a>
+      {% else %}
+      <a href="{% url 'signup' %}">Sign Up</a>
+      <a href="{% url 'login' %}">Log In</a>
+      {% endif %}
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <main>
+      <div alt="about us" class="about-us">
+        <picture id="about-us-img">
+          <source
+            srcset="https://i.imgur.com/QcJL9LQ.png"
+            media="(max-width: 600px)"
+          />
+          <img src="https://i.imgur.com/3l3tbGg.png" />
+        </picture>
+      </div>
+      <div class="mission">
+        <p>
+          <span style="margin: auto; display: table; text-align: center">
+            <strong>Our Mission</strong></span
+          >
+          <br />
+          Our mission is to create a platform that empowers individuals to buy
+          goods in a fair and efficient manner. Our goal is to become the
+          leading online marketplace for auctioning, where the power of
+          technology meets the tradition of bargaining. We believe that everyone
+          should have access to the opportunities and excitement of buying at
+          auctions, and it is our mission to make that a reality for all.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
+<script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
