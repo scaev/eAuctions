@@ -6,7 +6,7 @@
   <h4>What Do You Want To Sell?</h4>
   {% endif %}
 
-  <form action="" method="POST">
+  <form action="" method="POST" id="sell_form">
     {% csrf_token %}
     <table>
       {{ form.as_table }}

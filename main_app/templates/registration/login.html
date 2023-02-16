@@ -27,9 +27,9 @@
 
     <form method="POST" action="{% url 'login' %}">
       {% csrf_token %}
-      <h5>Username:</h5>
+      <!-- <h5>Username:</h5> -->
       <div class="Rectangle-52">{{ form.username }}</div>
-      <h5>Password:</h5>
+      <!-- <h5>Password:</h5> -->
       <div class="Rectangle-52">{{ form.password }}</div>
       <input type="hidden" name="next" value="{{ next }}" />
       <div class="login1-button">
