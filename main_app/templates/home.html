@@ -1,15 +1,44 @@
-{% extends 'base.html' %}
-{% block content %}
-
-
-    <div class="container">
-      <div class="item">Flex Item 1</div>
-      <div class="item">Flex item 2</div>
-      <div class="item">Flex item 3</div>
-      <div class="item">Flex item 4</div>
-      <div class="item">Flex item 5</div>
-      <div class="item">Flex item 6</div>
+{% extends 'base.html' %} {% block content %} {% for auction in auctions %}
+<div class="container">
+  <div class="item">
+    <div class="image">
+      {% for photo in auction.photo_set.all %}
+      <img class="camera" id="images" src="{{photo.url}}" alt="Auction Photo" />
+      {% empty %}
+      <div class="camera">No Photos Uploaded</div>
+      {% endfor %}
     </div>
+    <div class="details">
+      <h3><a href="{% url 'detail' auction.id %}">{{ auction.title }}</a></h3>
+      <p>$ {{ auction.starting_price }}</p>
+      <div class="row">
+        <p>Bids: {{auction.bid_set.all|length}}&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <p id="countdown"></p>
+      </div>
+    </div>
+  </div>
+</div>
 
-    
-    {% endblock %}
+<!-- <script>
+  function updateCountdown() {
+    var now = new Date();
+    var end_date = new Date('{{ auction.end_date|date:"Y-m-d H:i:s" }}');
+    var time_remaining = end_date - now;
+    var seconds_remaining = Math.floor(time_remaining / 1000);
+
+    if (seconds_remaining < 0) {
+      document.getElementById("countdown").innerHTML = "Auction has ended.";
+    } else {
+      var days = Math.floor(seconds_remaining / (3600 * 24));
+      var hours = Math.floor((seconds_remaining % (3600 * 24)) / 3600);
+      var minutes = Math.floor((seconds_remaining % 3600) / 60);
+      var seconds = seconds_remaining % 60;
+      var countdown = days + " D " + hours + " Hrs ";
+      document.getElementById("countdown").innerHTML = countdown;
+    }
+  }
+
+  setInterval(updateCountdown, 1000);
+</script> -->
+
+{% endfor %} {% endblock %}

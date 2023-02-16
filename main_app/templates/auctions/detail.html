@@ -6,7 +6,6 @@
       <div class="main-image">
         {% for photo in auction.photo_set.all %}
         <img
-          class="responsive-img card-panel"
           id="images"
           src="{{photo.url}}"
           alt="Auction Photo"
@@ -15,12 +14,12 @@
         <div class="card-panel teal-text center-align">No Photos Uploaded</div>
         {% endfor %}
       </div>
-      <div class="secondary-images">
+      <!-- <div class="secondary-images">
         <div></div>
         <div></div>
         <div></div>
         <div></div>
-      </div>
+      </div> -->
       <form
         action="{% url 'add_photo' auction.id %}"
         enctype="multipart/form-data"
@@ -28,9 +27,9 @@
         class="card-panel"
       >
         {% csrf_token %}
-        <input type="file" name="photo-file" />
+        <input type="file" name="photo-file" id="uploading_photo"/>
         <br /><br />
-        <button type="submit" class="btn">Upload Photo</button>
+        <button type="submit" class="btn" id="uploading_photo2">Upload Photo</button>
       </form>
     </div>
     <div class="product-info">
@@ -43,45 +42,50 @@
   <div class="right-panel">
     <h1>{{ auction.title }}</h1>
     <h2>
-      Time left: <span class="red"><div id="countdown"></div></span> | Bids:
+      Time left: <span id="countdown" class="red"></span> | Bids:
       {{bids|length}}
     </h2>
-    <div class="card-action">
-      <a href="{% url 'auctions_update' auction.id %}">Edit</a>
-      <a href="{% url 'auctions_delete' auction.id %}">Delete</a>
-    </div>
+ 
     <h2>
       Current Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       ${{max_bid_amount}}
     </h2>
     <h2>
-      Base Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Base Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       ${{auction.starting_price}}
     </h2>
-    <h2>
+    <!-- <h2>
       My Bid:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <!-- <input
-        type="text"
-        value="$0.00"
-        class="price-input"
-      /> -->
+    </h2> -->
       <form action="{% url 'add_bid' auction.id %}" method="POST">
         {% csrf_token %}
         <!-- Render the inputs -->
         {{ bid_form.as_p }}
-        <input type="submit" class="btn" value="Place My Bid" />
+        <!-- <input type="submit" class="delete-button" value="Place My Bid" /> -->
+        <button type="submit" class="place-button">Place My Bid</button>
       </form>
-    </h2>
-    <button type="button" class="update-button">Place My Bid</button>
-    <button type="button" class="delete-button" id="delete-bid">
-      Delete My Bid
-    </button>
-    <button type="button" class="delete-listing" id="delete-listing">
-      Delete My Listing
-    </button>
 
-    <div id="mini-page-container"></div>
-    <div id="second-mini-page-container"></div>
+    <!-- <button type="button" class="update-button">Place My Bid</button> -->
+    <!-- <button type="submit" class="delete-button" id="delete-bid">
+      Delete My Bid
+    </button> -->
+    <div class="card-action">
+    <a href="{% url 'auctions_delete' auction.id %}"><button type="button" class="delete-listing" id="delete-listing">
+                        Delete My Listing
+                      </button></a>
+                      <a href="{% url 'auctions_update' auction.id %}"><button type="button" class="delete-listing" id="delete-listing">
+                        Edit My Listing
+                      </button></a>
+      
+                    </div>
+
+    <!-- <div id="mini-page-container"></div>
+    <div id="second-mini-page-container"></div> -->
+
+    <!-- <div class="card-action">
+      <a href="{% url 'auctions_update' auction.id %}">Edit</a> -->
+      <!-- <a href="{% url 'auctions_delete' auction.id %}">Delete</a> -->
+    <!-- </div> -->
 
     <table id="bids">
       <thead>
@@ -200,7 +204,6 @@
       var minutes = Math.floor((seconds_remaining % 3600) / 60);
       var seconds = seconds_remaining % 60;
       var countdown =
-        "Time remaining: " +
         days +
         " days " +
         hours +

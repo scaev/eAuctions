@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 /* nav bar */
 body {
   margin: 0;
@@ -10,19 +11,13 @@ body {
 
 .topnav {
   background-color: #1a254c;
-  overflow: hidden;
   display: flex;
-}
-
-.topnav > a:last-child {
-  margin-left: auto;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .topnav a {
-  float: left;
-  display: block;
   color: #f2f2f2;
-  text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
@@ -33,7 +28,14 @@ body {
   color: black;
 }
 
-.topnav a.active {
+.topnav a:first-child {
+  background-color: #04aa6d;
+  color: white;
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+.topnav a:active {
   background-color: #04aa6d;
   color: white;
 }
@@ -74,12 +76,6 @@ body {
   }
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .item {
   background-color: #f2f2f2;
   width: 88%;
@@ -103,15 +99,6 @@ body {
   align-items: center;
 }
 
-.footer {
-  background-color: #333;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
 /* all auctions page */
 .container {
   display: inline-block;
@@ -206,22 +193,23 @@ body {
   padding-block: 5vh; */
 /* } */
 
-.containerr {
+/* .container {
   display: flex;
 
   height: 100vh;
   padding-inline: 10vh;
   padding-block: 5vh;
-}
+} */
 
 .auction-experience {
-  width: 500px;
+  /* width: 500px; */
+  width: auto;
   padding: 20px;
   background-color: #f2f2f2;
 
-  position: absolute;
+  /* position: absolute;
   top: -30px;
-  left: 30px;
+  left: 30px; */
 }
 
 .gray-box {
@@ -232,7 +220,12 @@ body {
   width: 100%; /* make the box take up the full width of the webpage */
 }
 
-.grey-squar {
+/* #about-us-id {
+  display: block;
+  object-fit: fill;
+} */
+
+.grey-square {
   width: 200px;
   height: 130%;
   padding: 20px;
@@ -267,30 +260,10 @@ h3.about-us {
   font-size: 14px;
 }
 
-.mission {
-  width: 400px;
-  padding: 20px;
-  position: absolute;
-  bottom: -300px;
-  left: 50px;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 130%;
-  text-align: center;
-  word-wrap: break-word;
-  display: inline-block;
-  font-family: "Times New Roman", Times, serif;
-}
-
-.mission {
-  max-width: auto;
-  margin: 0 auto;
-}
-
 /* auction details */
 
 .container-1 {
   display: flex;
-
   height: 100vh;
   padding-inline: 10vh;
   padding-block: 5vh;
@@ -304,26 +277,11 @@ h3.about-us {
   width: 60%;
 }
 
-.images {
-  height: 70%;
-}
-
-.main-image {
-  height: 75%;
-  background-color: lightgrey;
-}
-
-.secondary-images {
-  display: flex;
-  gap: 1rem;
-  height: 25%;
-  padding-top: 1rem;
-}
-
-.secondary-images > div {
-  background-color: lightgrey;
-  width: 25%;
-  height: 100%;
+#images {
+  display: block;
+  width: 100%;
+  height: calc(100% - 2rem);
+  object-fit: cover;
 }
 
 .product-info {
@@ -338,6 +296,90 @@ h3.about-us {
 
 .red {
   color: red;
+}
+input#id_amount {
+  /* background-color: darkorange; */
+  color: darkorange;
+  border: 2px solid darkorange;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin-top: 2rem;
+  width: 80%;
+}
+
+button#delete-listing,
+.delete-listing {
+  color: darkorange;
+  border: 2px solid darkorange;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.place-button {
+  background-color: darkorange;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  width: 100%;
+}
+
+
+#uploading_photo {
+  /* background-color: darkorange; */
+  color: darkorange;
+  border: 2px solid darkorange;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  width: 80%;
+}
+
+/* input#file-upload-button {
+  color: red;
+  background-color: red;
+} */
+
+#nav_logo {
+  font-family: Roboto;
+}
+
+#index_auction_title {
+  text-decoration: none;
+}
+
+#uploading_photo2 {
+  /* background-color: darkorange; */
+  color: darkorange;
+  border: 2px solid darkorange;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  width: 80%;
+  align-self: center;
 }
 
 .update-button {
@@ -377,6 +419,10 @@ h3.about-us {
   cursor: pointer;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   margin-top: 2rem;
+}
+
+.input.button {
+  color: darkorange;
 }
 
 .price-input {
@@ -786,26 +832,9 @@ input[type="password"]
   margin-top: 40px;
 }
 
-.images {
-  height: 70%;
-}
-
 .main-image {
   height: 75%;
   background-color: lightgrey;
-}
-
-.secondary-images {
-  display: flex;
-  gap: 1rem;
-  height: 25%;
-  padding-top: 1rem;
-}
-
-.secondary-images > div {
-  background-color: lightgrey;
-  width: 25%;
-  height: 100%;
 }
 
 .product-info {
@@ -1007,4 +1036,28 @@ label {
 }
 .Rectangle-66 {
   margin-left: 600px;
+}
+
+/* About Us Page */
+
+.about-us {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mission {
+  width: 600px;
+  padding: 20px;
+  position: absolute;
+  /* bottom: -300px; */
+  left: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 130%;
+  text-align: justify;
+  word-wrap: break-word;
+  display: inline-block;
+  font-family: "Times New Roman", Times, serif;
+  align-self: center;
+  /* margin: auto; */
 }
