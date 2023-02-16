@@ -1,6 +1,111 @@
 {% extends 'base.html' %} {% block content %}
-
 <div class="container-5">
+  <div class="left-panel">
+    <div class="images">
+      <div class="main-image">
+        <img src="/static/images/people.jpeg" width="650" alt="" />
+      </div>
+    </div>
+  </div>
+  <div class="right-panel">
+    <a href="https://www.fontspace.com/category/sans-serif"
+      ><img
+        class="logo"
+        src="https://see.fontimg.com/api/renderfont4/3zOvZ/eyJyIjoiZHciLCJoIjo0MiwidyI6MTAwMCwiZnMiOjQyLCJmZ2MiOiIjRDk2RDJBIiwiYmdjIjoiI0ZGRkZGRiJ9/Q3JlYXRlIGEgbmV3IGFjY291bnQg/montserrat-black.png"
+        alt="Sans Serif fonts"
+    /></a>
+
+    <!-- <span class="Welcome-to-eAuction"> Create a new account </span> -->
+    <div
+      class="Please-put-the-correct-email-and-password-below-to-enter-your-account"
+    >
+      Please put your information below to create a new account:
+    </div>
+
+    <p class="red-text">{{ error_message }}</p>
+
+    <form method="POST" action="{% url 'signup' %}">
+      {% csrf_token %}
+      <div class="input-wrapper">
+        <div class="Rectangle-33">
+          {{ form.username }}
+          <span class="input-description1"
+            >●Username Required. 150 characters or fewer. Letters, digits and
+            @/./+/-/_ only.</span
+          >
+        </div>
+        <div class="input-wrapper2">
+          <div class="Rectangle-33">
+            <input
+              type="password"
+              name="{{ form.password1.name }}"
+              placeholder="Password"
+            />
+          </div>
+          <ul class="input-description2">
+            <li>
+              ● Your password can’t be too similar to your other personal
+              information.
+            </li>
+            <li>● Your password must contain at least 8 characters.</li>
+            <li>● Your password can’t be a commonly used password.</li>
+            <li>● Your password can’t be entirely numeric.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="Rectangle-33">
+        <input
+          type="password"
+          name="{{ form.password2.name }}"
+          placeholder="Password Confirmation"
+        />
+      </div>
+      <span class="input-description3"
+        >● Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+        only.</span
+      >
+      <button type="submit" class="login-button">Register</button>
+    </form>
+  </div>
+</div>
+
+<!-- ************ -->
+
+<!-- <h1>Sign Up</h1>
+
+<p class="red-text">{{ error_message }}</p>
+
+<form method="POST" action="{% url 'signup' %}">
+  {% csrf_token %} {{ form.as_p }}
+  <input type="submit" class="btn" value="Sign Up" />
+</form> -->
+
+{% endblock %}
+
+<!-- <h1 class="Welcome-to-eAuction">Sign Up</h1>
+
+<p class="red-text">{{ error_message }}</p>
+
+<form method="POST" action="{% url 'signup' %}">
+  {% csrf_token %}
+  <div class="Rectangle-52">{{ form.username }}</div>
+
+  <div class="Rectangle-52">{{ form.email }}</div>
+
+  <div class="Rectangle-33">{{ form.password }}</div>
+
+  <div class="password-requirements">
+    <h4>Password requirements:</h4>
+    <p>• 8 characters min</p>
+    <p>• One lowercase letter</p>
+    <p>• One capital letter</p>
+    <p>• One number</p>
+  </div>
+
+  <button type="submit" class="login-button">Sign Up</button>
+</form> -->
+
+<!-- <div class="container-5">
   <div class="left-panel">
     <div class="images">
       <div class="main-image">
@@ -26,9 +131,9 @@
         />
       </div>
 
-      <!-- <div class="Rectangle-52">
-            <input type="email" id="email" name="email" placeholder="Email" />
-          </div> -->
+      <div class="Rectangle-52">
+        <input type="email" id="email" name="email" placeholder="Email" />
+      </div>
       <div class="Rectangle-33">
         <input
           type="password"
@@ -53,15 +158,4 @@
       <span class="text-style-2"></span>
     </span>
   </div>
-</div>
-
-<!-- <h1>Sign Up</h1>
-
-<p class="red-text">{{ error_message }}</p>
-
-<form method="POST" action="{% url 'signup' %}">
-  {% csrf_token %} {{ form.as_p }}
-  <input type="submit" class="btn" value="Sign Up" />
-</form> -->
-
-{% endblock %}
+</div> -->

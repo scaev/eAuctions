@@ -99,7 +99,9 @@
       {% for bid in bids %}
       <tbody>
         <tr>
-          <td><input type="checkbox" id="{{ bid.id }}" /></td>
+          <td>
+            <input type="checkbox" id="{{ bid.id }}" />
+          </td>
           <td>{{ bid.amount }}</td>
           <td>{{ bid.date_created }}</td>
           <td>{{ bid.user.username }}</td>
@@ -127,11 +129,16 @@
 
     var cancelButton = miniPageContent.querySelector(".cancel-button");
     var confirmButton = miniPageContent.querySelector(".confirm-button");
+    // Stores checked checkboxes from bids table in array
     var selectedBids = document.querySelectorAll(
       "#bids tbody tr td input:checked"
     );
-    debugger;
-    var selectedBidIds = selectedBids.map((bid) => bid.attr("id"));
+
+    var selectedBidIds = []; // empty selected bid ids array
+    // iterating over selectedBids and pushing id attr value to new array
+    selectedBids.forEach(function (bid) {
+      selectedBidIds.push(bid.getAttribute("id"));
+    });
 
     cancelButton.addEventListener("click", function () {
       miniPageContainer.style.display = "none";
