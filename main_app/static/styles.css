@@ -623,6 +623,7 @@ tr:hover {
   letter-spacing: normal;
   text-align: center;
   color: #777;
+  margin-top: 40px;
 }
 
 .Rectangle-52,
@@ -637,13 +638,72 @@ tr:hover {
   padding: 0 0 0px;
 }
 
-input[type="text"][name="username"] {
+.input-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.input-wrapper2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.input-description1 {
+  display: block;
+  margin-top: 5px;
+}
+
+.input-description2 {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 5px;
+  margin-left: 290px;
+}
+
+.input-description3 {
+  display: block;
+  margin-top: 5px;
+  margin-left: 330px;
+}
+
+.input-description5 {
+  display: block;
+  margin-top: 5px;
+  margin-left: 330px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+img.logo {
+  width: 400px;
+  margin-left: 320px;
+}
+
+.input-description2 li {
+  list-style: none;
+  margin-bottom: 5px;
+  position: relative;
+  padding-left: 5px;
+}
+
+.input-description2 li:before {
+  
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+input[type="text"][name="username"]
+ {
   width: 345px;
   height: 50px;
   flex-grow: 0;
   padding: 17px 244px 18px 32px;
   border-radius: 5px;
   background-color: #ebf1f8;
+  
 }
 
 .login-button {
@@ -660,12 +720,12 @@ input[type="text"][name="username"] {
   text-align: center;
 }
 
-.button {
+
+.button-unique {
   width: 345px;
   height: 50px;
   flex-grow: 0;
   margin: 60px 208px 24px 330px;
-  padding: 15px 151px 16px;
   border-radius: 5px;
   background-color: #eb6440;
   border: none;
@@ -673,6 +733,8 @@ input[type="text"][name="username"] {
   font-size: 20px;
   text-align: center;
 }
+
+
 
 input[type="full-name"] {
   width: 100%;
@@ -704,7 +766,8 @@ input[type="email"] {
   border: none;
 }
 
-input[type="password"] {
+input[type="password"]
+ {
   width: 100%;
   height: 100%;
   font-size: 18px;
@@ -713,7 +776,7 @@ input[type="password"] {
   box-sizing: border-box;
   background-color: lightgrey;
   outline: none;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: 'Times New Roman', Times, serif
 
   text-align: center;
   border: none;
@@ -748,6 +811,7 @@ input[type="password"] {
 
 .right-panel {
   width: 60%;
+  margin-top: 40px;
 }
 
 .main-image {
