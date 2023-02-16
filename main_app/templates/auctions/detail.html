@@ -83,18 +83,24 @@
     <div id="mini-page-container"></div>
     <div id="second-mini-page-container"></div>
 
-    <table>
-      <tr>
-        <th>Bid Amount</th>
-        <th>Date Created</th>
-        <th>User</th>
-      </tr>
+    <table id="bids">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Bid Amount</th>
+          <th>Date Created</th>
+          <th>User</th>
+        </tr>
+      </thead>
       {% for bid in bids %}
-      <tr>
-        <td>{{ bid.amount }}</td>
-        <td>{{ bid.date_created }}</td>
-        <td>{{ bid.user.username }}</td>
-      </tr>
+      <tbody>
+        <tr>
+          <td><input type="checkbox" id="{{ bid.id }}" /></td>
+          <td>{{ bid.amount }}</td>
+          <td>{{ bid.date_created }}</td>
+          <td>{{ bid.user.username }}</td>
+        </tr>
+      </tbody>
       {% endfor %}
     </table>
   </div>
@@ -117,6 +123,11 @@
 
     var cancelButton = miniPageContent.querySelector(".cancel-button");
     var confirmButton = miniPageContent.querySelector(".confirm-button");
+    var selectedBids = document.querySelectorAll(
+      "#bids tbody tr td input:checked"
+    );
+    debugger;
+    var selectedBidIds = selectedBids.map((bid) => bid.attr("id"));
 
     cancelButton.addEventListener("click", function () {
       miniPageContainer.style.display = "none";
