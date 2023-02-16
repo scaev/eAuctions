@@ -1022,44 +1022,48 @@ label {
 
 /* About Us Page */
 
-.mission {
-  margin-left: auto;
- margin-right: auto;
-}
-
 .about-us {
   width: 100%;
-  display: flex;
- margin-left: 0;
- margin-right: 0;
+  height: auto;
+margin: auto;
+padding: 0;
+/* height: 100%; */
+max-width: 100%;
+/* max-height: 100%; */
+display: flex;
+/* margin: 0 auto; */
+
 }
 
-#mission_head {
-  /* margin-bottom: 20px; */
-  position: absolute;
-  left: 25%;
-  width: 100%;
-  display: flex;
- /* margin-left: auto;
- margin-right: auto; */
-}
 
 .mission {
-  width: 600px;
+  margin-left: 25%;
+  margin-right: 25%;
+  max-width: 600px;
   padding: 20px;
   position: absolute;
+  font-size: 20px;
   /* bottom: -300px; */
-  left: 50px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, serif, sans-serif;
   line-height: 130%;
   text-align: justify;
   word-wrap: break-word;
   display: inline-block;
-  font-family: "Times New Roman", Times, serif;
+ 
   align-self: center;
   /* margin: auto; */
 }
 
 #mission_body {
   margin: 15px;
+}
+
+@media only screen and (max-width: 600px)  {
+  .about-us {
+    margin: 10%;
+  }
+  
+  .mission {
+    margin: 0;
+  }
 }
