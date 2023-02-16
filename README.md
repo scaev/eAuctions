@@ -29,16 +29,16 @@ This is a web application for online auctions, built with Django. Users can crea
 
 ## Installation
 
-To run this application, you'll need to have Python 3 and Django installed on your system. You can install Django using pip:
-pip install django
-Once you have Django installed, you can clone this repository and navigate to the root directory:
-git clone https://github.com/scaev/eAuctions.git
-cd eAuctions
-You'll need to apply the migrations to create the database tables:
-python manage.py migrate
-You can then start the development server:
-python manage.py runserver
-The application will be accessible at http://localhost:8000/ in your web browser.
+- To run this application, you'll need to have Python 3 and Django installed on your system. You can install Django using pip:
+- pip install django
+- Once you have Django installed, you can clone this repository and navigate to the root directory:
+- git clone https://github.com/scaev/eAuctions.git
+- cd eAuctions
+- You'll need to apply the migrations to create the database tables:
+- python manage.py migrate
+- You can then start the development server:
+- python manage.py runserver
+- The application will be accessible at http://localhost:8000/ in your web browser.
 
 ## Usage
 
@@ -53,6 +53,13 @@ Other users can then bid on your auction by entering a higher price on the aucti
 ![wireframe](https://i.imgur.com/ISFpMoe.png)
 ![wireframe](https://i.imgur.com/d3tneyT.png)
 
+## Screenshots 📝
+
+![SS](https://i.imgur.com/UnpeYyr.png)
+![SS](https://i.imgur.com/xIqdhrS.png)
+![SS](https://i.imgur.com/ncLGglu.png)
+![SS](https://i.imgur.com/oGwj9Dg.png)
+
 Prior to project start, wireframing was completed by design team to show ideal project design and flow. The above screenshot details a basic design concept prior to beginning the project.
 
 ![ERD](https://i.imgur.com/l13efHE.png)
@@ -65,7 +72,6 @@ Project wireframe and design materials are held in [this](https://app.zeplin.io/
 
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
@@ -85,8 +91,8 @@ If you'd like to contribute to this project, please fork the repository and crea
 
 ## Icebox Features 🧊
 
-- Add items to watchlist without having to bid
-- Have categories for the products being auctioned - preferably dropdown menu
+- Adding items to watch-list without having to bid
+- Have categories for the products being auctioned
 - Display a message to the winner of a bid and to the seller when the bid closes successfully
 - Adding calendar template for sell view
 

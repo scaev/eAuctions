@@ -3,7 +3,6 @@
 /* nav bar */
 body {
   margin: 0;
-  /* display: grid; */
   grid-template-rows: 50px 1fr;
   grid-template-areas:
     "nav"
@@ -31,7 +30,6 @@ body {
 }
 
 .topnav a:first-child {
-  /* background-color: #04aa6d; */
   color: white;
   align-self: flex-start;
   margin-right: auto;
@@ -104,10 +102,6 @@ body {
 /* all auctions page */
 .container {
   display: inline-block;
-  /* grid-template-columns: repeat(5, auto);
-  grid-auto-rows: 400px;
-  grid-gap: 20px; */
-  /* justify-content: center; */
   padding-top: 20px;
   position: relative;
 }
@@ -183,35 +177,10 @@ body {
   border: none;
 }
 
-/* about page */
-/* 
-.containerr {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; */
-/* align-items: center;
-  height: 100vh;
-  padding-inline: 10vh;
-  padding-block: 5vh; */
-/* } */
-
-/* .container {
-  display: flex;
-
-  height: 100vh;
-  padding-inline: 10vh;
-  padding-block: 5vh;
-} */
-
 .auction-experience {
-  /* width: 500px; */
   width: auto;
   padding: 20px;
   background-color: #f2f2f2;
-
-  /* position: absolute;
-  top: -30px;
-  left: 30px; */
 }
 
 .gray-box {
@@ -298,7 +267,6 @@ h3.about-us {
   color: red;
 }
 input#id_amount {
-  /* background-color: darkorange; */
   color: darkorange;
   border: 2px solid darkorange;
   border-radius: 5px;
@@ -340,7 +308,6 @@ button#delete-listing,
 }
 
 #uploading_photo {
-  /* background-color: darkorange; */
   color: darkorange;
   border: 2px solid darkorange;
   border-radius: 5px;
@@ -352,11 +319,6 @@ button#delete-listing,
   margin-top: 2rem;
   width: 80%;
 }
-
-/* input#file-upload-button {
-  color: red;
-  background-color: red;
-} */
 
 #nav_logo {
   font-family: Roboto;
@@ -367,7 +329,6 @@ button#delete-listing,
 }
 
 #uploading_photo2 {
-  /* background-color: darkorange; */
   color: darkorange;
   border: 2px solid darkorange;
   border-radius: 5px;
@@ -377,7 +338,7 @@ button#delete-listing,
   cursor: pointer;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   margin-top: 2rem;
-  width: 80%;
+  width: 88%;
   align-self: center;
 }
 
@@ -586,6 +547,13 @@ tr:hover {
   text-align: right;
 }
 
+.container-5 {
+  display: flex;
+  height: 100vh;
+  padding-inline: 5vh;
+  padding-block: 3vh;
+}
+
 .Welcome-to-eAuction {
   width: 355px;
   height: 38px;
@@ -689,21 +657,18 @@ img.logo {
 }
 
 .input-description2 li:before {
-  
   position: absolute;
   left: 0;
   top: 0;
 }
 
-input[type="text"][name="username"]
- {
+input[type="text"][name="username"] {
   width: 345px;
   height: 50px;
   flex-grow: 0;
   padding: 17px 244px 18px 32px;
   border-radius: 5px;
   background-color: #ebf1f8;
-  
 }
 
 .login-button {
@@ -720,7 +685,6 @@ input[type="text"][name="username"]
   text-align: center;
 }
 
-
 .button-unique {
   width: 345px;
   height: 50px;
@@ -733,8 +697,6 @@ input[type="text"][name="username"]
   font-size: 20px;
   text-align: center;
 }
-
-
 
 input[type="full-name"] {
   width: 100%;
@@ -766,18 +728,15 @@ input[type="email"] {
   border: none;
 }
 
-input[type="password"]
- {
+input[type="password"] {
   width: 100%;
   height: 100%;
   font-size: 18px;
-
   padding: 10px;
   box-sizing: border-box;
   background-color: lightgrey;
   outline: none;
-  font-family: 'Times New Roman', Times, serif
-
+  font-family: "Times New Roman", Times, serif;
   text-align: center;
   border: none;
 }
@@ -893,18 +852,6 @@ h4 {
 .title-container {
   text-align: left;
 }
-/* 
-.Rectangle-52,
-.Rectangle-33 {
-  width: 345px;
-  height: 50px;
-  flex-grow: 0;
-  margin: 25px 0 0 330px;
-  padding: 17px 244px 18px 32px;
-  border-radius: 5px;
-  background-color: #ebf1f8;
-  padding: 0 0 0px;
-} */
 
 input[type="title"] {
   width: 50%;
@@ -1030,7 +977,6 @@ label {
 }
 
 #mission_head {
-  /* margin-bottom: 20px; */
   position: absolute;
   left: 50%;
 }
@@ -1039,7 +985,6 @@ label {
   width: 600px;
   padding: 20px;
   position: absolute;
-  /* bottom: -300px; */
   left: 50px;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 130%;
@@ -1048,7 +993,6 @@ label {
   display: inline-block;
   font-family: "Times New Roman", Times, serif;
   align-self: center;
-  /* margin: auto; */
 }
 
 #mission_body {
