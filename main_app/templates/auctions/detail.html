@@ -27,9 +27,9 @@
         class="card-panel"
       >
         {% csrf_token %}
-        <input type="file" name="photo-file" />
+        <input type="file" name="photo-file" id="uploading_photo"/>
         <br /><br />
-        <button type="submit" class="btn">Upload Photo</button>
+        <button type="submit" class="btn" id="uploading_photo2">Upload Photo</button>
       </form>
     </div>
     <div class="product-info">
@@ -66,9 +66,9 @@
       </form>
 
     <!-- <button type="button" class="update-button">Place My Bid</button> -->
-    <button type="submit" class="delete-button" id="delete-bid">
+    <!-- <button type="submit" class="delete-button" id="delete-bid">
       Delete My Bid
-    </button>
+    </button> -->
     <div class="card-action">
     <a href="{% url 'auctions_delete' auction.id %}"><button type="button" class="delete-listing" id="delete-listing">
                         Delete My Listing

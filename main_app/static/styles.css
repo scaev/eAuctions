@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 /* nav bar */
 body {
   margin: 0;
@@ -30,8 +31,13 @@ body {
 .topnav a:first-child {
   background-color: #04aa6d;
   color: white;
-  justify-content: flex-start;
   align-self: flex-start;
+  margin-right: auto;
+}
+
+.topnav a:active {
+  background-color: #04aa6d;
+  color: white;
 }
 
 .topnav .icon {
@@ -70,12 +76,6 @@ body {
   }
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .item {
   background-color: #f2f2f2;
   width: 88%;
@@ -99,15 +99,6 @@ body {
   align-items: center;
 }
 
-.footer {
-  background-color: #333;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
 /* all auctions page */
 .container {
   display: inline-block;
@@ -202,13 +193,13 @@ body {
   padding-block: 5vh; */
 /* } */
 
-.container {
+/* .container {
   display: flex;
 
   height: 100vh;
   padding-inline: 10vh;
   padding-block: 5vh;
-}
+} */
 
 .auction-experience {
   /* width: 500px; */
@@ -228,6 +219,11 @@ body {
   display: inline-block; /* make the box wrap around the content */
   width: 100%; /* make the box take up the full width of the webpage */
 }
+
+/* #about-us-id {
+  display: block;
+  object-fit: fill;
+} */
 
 .grey-square {
   width: 200px;
@@ -315,7 +311,8 @@ input#id_amount {
   width: 80%;
 }
 
-button#delete-listing,.delete-listing {
+button#delete-listing,
+.delete-listing {
   color: darkorange;
   border: 2px solid darkorange;
   border-radius: 5px;
@@ -342,6 +339,47 @@ button#delete-listing,.delete-listing {
   width: 100%;
 }
 
+#uploading_photo {
+  /* background-color: darkorange; */
+  color: darkorange;
+  border: 2px solid darkorange;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  width: 80%;
+}
+
+/* input#file-upload-button {
+  color: red;
+  background-color: red;
+} */
+
+#nav_logo {
+  font-family: Roboto;
+}
+
+#index_auction_title {
+  text-decoration: none;
+}
+
+#uploading_photo2 {
+  /* background-color: darkorange; */
+  color: darkorange;
+  border: 2px solid darkorange;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  width: 80%;
+  align-self: center;
+}
 
 .update-button {
   background-color: darkorange;
