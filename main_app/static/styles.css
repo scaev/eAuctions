@@ -13,7 +13,6 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  
 }
 
 .topnav a {
@@ -22,7 +21,6 @@ body {
   text-decoration: none;
   font-size: 17px;
 }
-
 
 .topnav a:hover {
   background-color: #ddd;
@@ -204,7 +202,7 @@ body {
   padding-block: 5vh; */
 /* } */
 
-.containerr {
+.container {
   display: flex;
 
   height: 100vh;
@@ -213,13 +211,14 @@ body {
 }
 
 .auction-experience {
-  width: 500px;
+  /* width: 500px; */
+  width: auto;
   padding: 20px;
   background-color: #f2f2f2;
 
-  position: absolute;
+  /* position: absolute;
   top: -30px;
-  left: 30px;
+  left: 30px; */
 }
 
 .gray-box {
@@ -230,7 +229,7 @@ body {
   width: 100%; /* make the box take up the full width of the webpage */
 }
 
-.grey-squar {
+.grey-square {
   width: 200px;
   height: 130%;
   padding: 20px;
@@ -265,25 +264,6 @@ h3.about-us {
   font-size: 14px;
 }
 
-.mission {
-  width: 400px;
-  padding: 20px;
-  position: absolute;
-  bottom: -300px;
-  left: 50px;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 130%;
-  text-align: center;
-  word-wrap: break-word;
-  display: inline-block;
-  font-family: "Times New Roman", Times, serif;
-}
-
-.mission {
-  max-width: auto;
-  margin: 0 auto;
-}
-
 /* auction details */
 
 .container-1 {
@@ -301,15 +281,12 @@ h3.about-us {
   width: 60%;
 }
 
-
-#images{
+#images {
   display: block;
-   width: 100%;
+  width: 100%;
   height: calc(100% - 2rem);
   object-fit: cover;
 }
-
-
 
 .product-info {
   padding-top: 1rem;
@@ -324,7 +301,6 @@ h3.about-us {
 .red {
   color: red;
 }
-
 
 .update-button {
   background-color: darkorange;
@@ -678,13 +654,10 @@ input[type="password"] {
   width: 60%;
 }
 
-
-
 .main-image {
   height: 75%;
   background-color: lightgrey;
 }
-
 
 .product-info {
   padding-top: 1rem;
@@ -885,4 +858,26 @@ label {
 }
 .Rectangle-66 {
   margin-left: 600px;
+}
+
+/* About Us Page */
+
+.about-us {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mission {
+  width: 600px;
+  padding: 20px;
+  position: absolute;
+  /* bottom: -300px; */
+  left: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 130%;
+  text-align: justify;
+  word-wrap: break-word;
+  display: inline-block;
+  font-family: "Times New Roman", Times, serif;
 }
