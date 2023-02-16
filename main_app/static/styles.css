@@ -191,35 +191,42 @@ body {
 }
 
 /* about page */
-
-.container1 {
+/* 
+.containerr {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  /* align-items: center;
+  min-height: 100vh; */
+/* align-items: center;
   height: 100vh;
   padding-inline: 10vh;
   padding-block: 5vh; */
-}
+/* } */
 
-.top-panel {
-  flex: 50;
-}
+.container {
+  display: flex;
 
-.bottom-panel {
-  flex: 50;
-
-  background-color: rgb(65, 65, 65);
+  height: 100vh;
+  padding-inline: 10vh;
+  padding-block: 5vh;
 }
 
 .auction-experience {
-  width: 500px;
+  /* width: 500px; */
+  width: auto;
   padding: 20px;
   background-color: #f2f2f2;
 
-  position: absolute;
-  top: 180px;
-  left: 450px;
+  /* position: absolute;
+  top: -30px;
+  left: 30px; */
+}
+
+.gray-box {
+  background-color: #f0f0f0;
+  padding: 20px;
+  box-sizing: border-box; /* include padding in box sizing */
+  display: inline-block; /* make the box wrap around the content */
+  width: 100%; /* make the box take up the full width of the webpage */
 }
 
 .grey-square {
@@ -255,18 +262,6 @@ h3.about-us {
   text-align: center;
   color: darkgray;
   font-size: 14px;
-}
-
-.mission {
-  width: 400px;
-  padding: 20px;
-  color: white;
-
-  position: absolute;
-  bottom: 180px;
-  left: 450px;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 130%;
 }
 
 /* auction details */
@@ -346,6 +341,7 @@ button#delete-listing,.delete-listing {
   margin-top: 2rem;
   width: 100%;
 }
+
 
 .update-button {
   background-color: darkorange;
@@ -907,4 +903,26 @@ label {
 }
 .Rectangle-66 {
   margin-left: 600px;
+}
+
+/* About Us Page */
+
+.about-us {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mission {
+  width: 600px;
+  padding: 20px;
+  position: absolute;
+  /* bottom: -300px; */
+  left: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 130%;
+  text-align: justify;
+  word-wrap: break-word;
+  display: inline-block;
+  font-family: "Times New Roman", Times, serif;
 }
