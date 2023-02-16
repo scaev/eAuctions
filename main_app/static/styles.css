@@ -971,18 +971,22 @@ label {
 
 .about-us {
   width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  height: auto;
+margin: auto;
+padding: 0;
+/* height: 100%; */
+max-width: 100%;
+/* max-height: 100%; */
+display: flex;
+/* margin: 0 auto; */
+
 }
 
-#mission_head {
-  position: absolute;
-  left: 50%;
-}
 
 .mission {
-  width: 600px;
+  margin-left: 25%;
+  margin-right: 25%;
+  max-width: 600px;
   padding: 20px;
   position: absolute;
   left: 50px;
@@ -997,6 +1001,16 @@ label {
 #mission_body {
   margin: 15px;
 }
+
+
+@media only screen and (max-width: 600px)  {
+  .about-us {
+    margin: 10%;
+  }
+  
+  .mission {
+    margin: 0;
+  }
 
 /* add auction */
 
@@ -1086,3 +1100,4 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #27ae60;
 }
+
