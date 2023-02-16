@@ -967,6 +967,8 @@ label {
   margin-left: 600px;
 }
 
+
+
 /* About Us Page */
 
 .about-us {
@@ -997,4 +999,86 @@ label {
 
 #mission_body {
   margin: 15px;
+}
+
+
+/* add auction */
+
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sell-container {
+  display: inline-block;
+  /* grid-template-columns: repeat(5, auto);
+  grid-auto-rows: 400px;
+  grid-gap: 20px; */
+  /* justify-content: center; */
+  padding-top: 20px;
+  position: relative;
+  margin-left: 650px;
+
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 10px;
+}
+
+th {
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  text-align: left;
+  border-radius: 5px 0 0 5px;
+}
+
+td {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 0 5px 5px 0;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #dcdcdc;
+  font-size: 16px;
+  color: #333;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M15.5 5.5l-7.5 7.5-7.5-7.5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 8px 8px;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #27ae60;
 }

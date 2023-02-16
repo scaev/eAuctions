@@ -10,6 +10,5 @@ class BiddingForm(ModelForm):
         fields = ['amount']
 
 
-    
 
 
