@@ -637,7 +637,30 @@ tr:hover {
   padding: 0 0 0px;
 }
 
+input[type="text"][name="username"] {
+  width: 345px;
+  height: 50px;
+  flex-grow: 0;
+  padding: 17px 244px 18px 32px;
+  border-radius: 5px;
+  background-color: #ebf1f8;
+}
+
 .login-button {
+  width: 345px;
+  height: 50px;
+  flex-grow: 0;
+  margin: 60px 208px 24px 330px;
+  padding: 15px 151px 16px;
+  border-radius: 5px;
+  background-color: #eb6440;
+  border: none;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+button {
   width: 345px;
   height: 50px;
   flex-grow: 0;
