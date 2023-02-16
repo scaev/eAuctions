@@ -10,11 +10,11 @@ class BiddingForm(ModelForm):
         fields = ['amount']
 
 
-class UserSignUpForm(UserCreationForm):
-    username = forms.CharField()
-    password = forms.CharField(widget=forms.PasswordInput)
-    class Meta:
-        model = User
-        fields = ("username", "password")
+# class UserSignUpForm(UserCreationForm):
+#     username = forms.CharField()
+#     password = forms.CharField(widget=forms.PasswordInput)
+#     class Meta:
+#         model = User
+#         fields = ("username", "password")
     
 

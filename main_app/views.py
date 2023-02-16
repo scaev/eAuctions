@@ -10,7 +10,7 @@ from datetime import date, datetime
 from django.utils import timezone
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
-from .forms import UserSignUpForm
+# from .forms import UserSignUpForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect
@@ -108,39 +108,60 @@ def add_bid(request, auction_id):
   return redirect('detail', auction_id = auction_id,)  
   
 
-
-
-
 def signup(request):
-  print("I ran")
   error_message = ''
-  form = None
   if request.method == 'POST':
     # This is how to create a 'user' form object
     # that includes the data from the browser
-    form = UserSignUpForm(request.POST)
-    print("String")
+    form = UserCreationForm(request.POST)
     if form.is_valid():
       # This will add the user to the database
       user = form.save()
-      print(user)
-      username = form.cleaned_data.get("username")
-      password = form.cleaned_data.get("password")
-      user = authenticate(request, username=username, password=password)
       # This is how we log a user in via code
       login(request, user)
       return redirect('index')
-      
     else:
       error_message = 'Invalid sign up - try again'
-      form = UserSignUpForm()
-      print(form.errors)
-      return HttpResponseRedirect("/random")
-      
   # A bad POST or a GET request, so render signup.html with an empty form
-  # form = UserSignUpForm()
+  form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
+
+
+# def signup(request):
+#   print("I ran")
+#   error_message = ''
+#   form = None
+#   if request.method == 'POST':
+#     # This is how to create a 'user' form object
+#     # that includes the data from the browser
+#     form = UserCreationForm(request.POST)
+#     print("String")
+#     if form.is_valid():
+#       try: 
+#        # This will add the user to the database
+#         user = form.save()
+#         print(user)
+#         username = form.cleaned_data.get("username")
+#         password = form.cleaned_data.get("password")
+#         user = authenticate(request, username=username, password=password)
+#         # This is how we log a user in via code
+#         login(request, user)
+#         return redirect('index')
+#       except Exception as e: 
+#         print(e)
+#         return redirect("index")
+
+#     else:
+#       error_message = 'Invalid sign up - try again'
+#       form = UserCreationForm()
+#       print(form.errors)
+#       return HttpResponseRedirect("/")
+      
+#   # A bad POST or a GET request, so render signup.html with an empty form
+#   # form = UserSignUpForm()
+#   context = {'form': form, 'error_message': error_message}
+#   return render(request, 'registration/signup.html', context)
 
 
 
