@@ -1023,9 +1023,16 @@ label {
 /* About Us Page */
 
 .about-us {
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+}
+
+#mission_head {
+  /* margin-bottom: 20px; */
+  position: absolute;
+  left: 50%;
 }
 
 .mission {
@@ -1042,4 +1049,8 @@ label {
   font-family: "Times New Roman", Times, serif;
   align-self: center;
   /* margin: auto; */
+}
+
+#mission_body {
+  margin: 15px;
 }
