@@ -12,7 +12,7 @@
     <span class="Welcome-to-eAuction">
       Welcome to
       <span class="text-style-1">e</span
-      ><span class="text-style-2">Auction</span>
+      ><span class="text-style-2">Auctions</span>
     </span>
     <div
       class="Please-put-the-correct-email-and-password-below-to-enter-your-account"
@@ -27,9 +27,9 @@
 
     <form method="POST" action="{% url 'login' %}">
       {% csrf_token %}
-      <h5>Username:</h5>
+      <!-- <h5>Username:</h5> -->
       <div class="Rectangle-52">{{ form.username }}</div>
-      <h5>Password:</h5>
+      <!-- <h5>Password:</h5> -->
       <div class="Rectangle-52">{{ form.password }}</div>
       <input type="hidden" name="next" value="{{ next }}" />
       <div class="login1-button">
