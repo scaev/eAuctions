@@ -1005,7 +1005,7 @@ label {
 /* add auction */
 
 
-form {
+/* form {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
@@ -1013,7 +1013,7 @@ form {
   border: 1px solid #dcdcdc;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
+} */
 
 .sell-container {
   display: inline-block;
@@ -1027,27 +1027,27 @@ form {
 
 }
 
-table {
+/* table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 10px;
-}
+} */
 
-th {
+/* th {
   background-color: #333;
   color: #fff;
   padding: 15px;
   text-align: left;
   border-radius: 5px 0 0 5px;
-}
+} */
 
-td {
+/* td {
   background-color: #fff;
   padding: 15px;
   border-radius: 0 5px 5px 0;
-}
+} */
 
-input[type="text"],
+/* input[type="text"],
 select {
   width: 100%;
   padding: 10px;
@@ -1056,7 +1056,19 @@ select {
   border: 1px solid #dcdcdc;
   font-size: 16px;
   color: #333;
+} */
+
+textarea#id_description {
+  border-radius: 5px;
+  border: 1px solid #dcdcdc;
 }
+
+input#id_starting_price {
+  border-radius: 5px;
+  border: 1px solid #dcdcdc;
+}
+
+
 
 select {
   appearance: none;
