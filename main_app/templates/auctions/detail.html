@@ -51,7 +51,7 @@
       {% csrf_token %} {{ bid_form.as_p }}
       <button type="submit" class="place-button">Place My Bid</button>
     </form>
-    <div class="card-action">
+    <div class="card-action" id="delete-listing-form">
       <a href="{% url 'auctions_delete' auction.id %}"
         ><button type="button" class="delete-listing" id="delete-listing">
           Delete My Listing
