@@ -1,0 +1,1103 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Raleway:500);
+/* nav bar */
+body {
+  margin: 0;
+  font-family: Raleway;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas:
+    "nav"
+    "main";
+}
+
+.topnav {
+  background-color: #1a254c;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.topnav a {
+  color: #f2f2f2;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: Raleway;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a:first-child {
+  color: white;
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+.topnav a:active {
+  background-color: #04aa6d;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.centre-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+.item {
+  background-color: #f2f2f2;
+  width: 88%;
+  margin: 5px auto;
+  padding: 10px;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* all auctions page */
+.container {
+  display: inline-block;
+  padding-top: 20px;
+  position: relative;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #ccc;
+}
+
+.item:hover {
+  transform: scale(1.1);
+}
+
+.details {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin: 0.5em;
+}
+
+.details .row p {
+  color: #808080;
+  font-family: Raleway;
+}
+
+.details h3,
+.details p {
+  margin: 0;
+}
+
+.image {
+  height: 250px;
+  width: 250px;
+}
+
+.item h2 {
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 1px 1px #ccc;
+}
+
+.item hr {
+  width: 60%;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+}
+
+.item .price {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.item .bids {
+  font-size: 14px;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+.row {
+  display: flex;
+}
+
+.camera {
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+
+.auction-experience {
+  width: auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+.gray-box {
+  background-color: #f0f0f0;
+  padding: 20px;
+  box-sizing: border-box; /* include padding in box sizing */
+  display: inline-block; /* make the box wrap around the content */
+  width: 100%; /* make the box take up the full width of the webpage */
+}
+
+.container-about {
+  align-items: center;
+  object-fit: fill;
+}
+
+.grey-square {
+  width: 200px;
+  height: 130%;
+  padding: 20px;
+  background-color: #f2f2f2;
+
+  position: absolute;
+  top: 80px;
+  right: -400px;
+  background-color: lightgrey;
+}
+
+.auction-experience h2 {
+  text-align: center;
+  word-wrap: break-word;
+  display: inline-block;
+  width: 100%;
+  font-size: 20px;
+  line-height: 30px;
+  font-family: Raleway;
+}
+
+@media only screen and (max-width: 500px) {
+  .auction-experience h2 {
+    font-size: 16px;
+    line-height: 30px;
+  }
+}
+
+h3.about-us {
+  text-align: center;
+  color: darkgray;
+  font-size: 14px;
+}
+
+/* auction details */
+
+.container-1 {
+  display: flex;
+  padding-inline: 3vh;
+}
+
+.left-panel {
+  width: 40%;
+}
+
+.right-panel {
+  width: 60%;
+}
+
+#images {
+  display: block;
+  width: 100%;
+  height: calc(100% - 2rem);
+  object-fit: cover;
+}
+
+.product-info {
+  padding-top: 1rem;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  padding-left: 4rem;
+}
+
+.red {
+  color: red;
+}
+input#id_amount {
+  color: darkorange;
+  border: 2px solid darkorange;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin-top: 2rem;
+  width: 80%;
+}
+
+button#delete-listing,
+.delete-listing {
+  color: darkorange;
+  border: 2px solid darkorange;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.place-button {
+  background-color: rgb(0, 165, 36);
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  width: 100%;
+}
+
+#uploading_photo {
+  color: darkorange;
+  border: 2px solid darkorange;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  width: 80%;
+}
+
+#nav_logo {
+  font-family: Roboto;
+}
+
+#index_auction_title {
+  text-decoration: none;
+}
+
+#uploading_photo2 {
+  color: darkorange;
+  border: 2px solid darkorange;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  width: 88%;
+  align-self: center;
+}
+
+.update-button {
+  background-color: darkorange;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.delete-button {
+  background-color: #fff;
+  color: darkorange;
+  border: 2px solid darkorange;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.delete-listing {
+  background-color: #fff;
+  color: darkorange;
+  border: 2px solid darkorange;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.input.button {
+  color: darkorange;
+}
+
+.price-input {
+  width: 80px;
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  text-align: right;
+}
+
+td,
+th {
+  padding-top: 1rem;
+  text-align: center;
+}
+
+/*  */
+
+.header {
+  background-color: #333;
+  color: white;
+  padding: 2px;
+  text-align: left;
+  padding-left: 80px;
+  font-family: Raleway;
+  font-weight: 200;
+}
+
+.header h1 {
+  display: inline-block;
+  margin-right: 150px;
+  font-family: Raleway;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e5e5e5;
+  padding: 10px;
+}
+
+.navbar a {
+  color: black;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+#mini-page-container .mini-page-content .cancel-button {
+  background-color: #fff;
+  color: darkorange;
+  border: 1px solid orange;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 15px;
+}
+
+#mini-page-container .mini-page-content .confirm-button {
+  background-color: darkorange;
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  margin-left: 5%;
+  padding: 15px;
+}
+
+#mini-page-container .mini-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#mini-page-container .mini-page-content {
+  background-color: #fff;
+  padding: 20px;
+  width: 420px;
+  height: 200px;
+  text-align: center;
+  border-radius: 10px;
+  font-family: Raleway;
+  color: rgba(128, 128, 128, 0.804);
+  font-weight: 100;
+}
+
+#mini-page-container .mini-page-content .delete-heading {
+  font-size: 24px;
+  font-weight: 200;
+  margin-bottom: 10px;
+  font-family: Raleway;
+  color: black;
+}
+
+.deleted-text {
+  color: red;
+}
+
+/* 
+ /* my BIDS page */
+
+.h3 {
+  font-size: 4em;
+  color: red;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  background-color: #fff;
+  border: 1px solid #eee; /* Add a light grey border */
+}
+
+th,
+td {
+  border: none;
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: #f8c291;
+  color: #fff;
+}
+
+tr {
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background-color: #f5b7b1;
+}
+
+/* newUSER page */
+
+.password-requirements {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #888;
+}
+.password-requirements h4 {
+  margin-right: 20px;
+}
+
+.p {
+  text-align: right;
+}
+
+.container-5 {
+  display: flex;
+  height: 100vh;
+  padding-inline: 5vh;
+  padding-block: 3vh;
+}
+
+.Welcome-to-eAuction {
+  width: 355px;
+  height: 38px;
+  margin: 80px 181px 60px 300px;
+  font-family: Roboto;
+  font-size: 32px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000;
+  text-align: right;
+}
+.Welcome-to-eAuction .text-style-1 {
+  font-weight: bold;
+  color: #eb6440;
+}
+.Welcome-to-eAuction .text-style-2 {
+  font-weight: bold;
+}
+
+.Please-put-the-correct-email-and-password-below-to-enter-your-account {
+  width: 331px;
+  height: 34px;
+  flex-grow: 0;
+
+  margin: 0 14px 25px 350px;
+  font-family: Raleway;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #777;
+  margin-top: 40px;
+}
+
+.Rectangle-52,
+.Rectangle-33 {
+  width: 345px;
+  height: 50px;
+  flex-grow: 0;
+  margin: 25px 0 0 330px;
+  padding: 17px 244px 18px 32px;
+  border-radius: 5px;
+  background-color: #ebf1f8;
+  padding: 0 0 0px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.input-wrapper2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.input-description1 {
+  display: block;
+  margin-top: 5px;
+}
+
+.input-description2 {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 5px;
+  margin-left: 290px;
+}
+
+.input-description3 {
+  display: block;
+  margin-top: 5px;
+  margin-left: 330px;
+}
+
+.input-description5 {
+  display: block;
+  margin-top: 5px;
+  margin-left: 330px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+img.logo {
+  width: 400px;
+  margin-left: 320px;
+}
+
+.input-description2 li {
+  list-style: none;
+  margin-bottom: 5px;
+  position: relative;
+  padding-left: 5px;
+}
+
+.input-description2 li:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+input[type="text"][name="username"] {
+  width: 345px;
+  height: 50px;
+  flex-grow: 0;
+  padding: 17px 244px 18px 32px;
+  border-radius: 5px;
+  background-color: #ebf1f8;
+}
+
+.login-button {
+  width: 345px;
+  height: 50px;
+  flex-grow: 0;
+  margin: 60px 208px 24px 330px;
+  padding: 15px 151px 16px;
+  border-radius: 5px;
+  background-color: #eb6440;
+  border: none;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.button-unique {
+  width: 345px;
+  height: 50px;
+  flex-grow: 0;
+  margin: 60px 208px 24px 330px;
+  border-radius: 5px;
+  background-color: #eb6440;
+  border: none;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+input[type="full-name"] {
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: lightgrey;
+  outline: none;
+  font-family: Raleway;
+
+  text-align: center;
+  border: none;
+}
+
+input[type="email"] {
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: lightgrey;
+  outline: none;
+  font-family: Raleway;
+
+  text-align: center;
+  border: none;
+}
+
+input[type="password"] {
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: lightgrey;
+  outline: none;
+  font-family: Raleway;
+  text-align: center;
+  border: none;
+}
+
+.Not-a-member-Join-now {
+  width: 242px;
+  height: 16px;
+  margin: 25px 255px 118px 380px;
+  font-family: Raleway;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000;
+}
+.Not-a-member-Join-now .text-style-1 {
+  font-weight: bold;
+  color: #fe724d;
+}
+.Not-a-member-Join-now .text-style-2 {
+  font-weight: bold;
+  color: #4f4e4e;
+}
+
+.left-panel {
+  width: 40%;
+}
+
+.right-panel {
+  width: 60%;
+  margin-top: 40px;
+}
+
+.main-image {
+  height: 75%;
+  background-color: lightgrey;
+}
+
+.product-info {
+  padding-top: 1rem;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  padding-left: 4rem;
+  position: relative;
+}
+
+.red {
+  color: red;
+}
+
+.price-input {
+  width: 80px;
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  text-align: right;
+}
+
+td,
+th {
+  padding-top: 1rem;
+  text-align: center;
+}
+
+/* WHAT DO YOU WANT TO SELL PAGE LISTING */
+
+h4 {
+  text-align: center;
+  width: 100%;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.big-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sell-upload {
+  width: 450px;
+  height: 300px;
+  border: 2px dotted darkgrey;
+  padding: 5%;
+
+  justify-content: center;
+}
+
+.sell-upload-text {
+  text-align: center;
+}
+
+.small-upload {
+  display: flex;
+}
+
+.square-upload {
+  border: 2px solid black;
+  width: 100px;
+  height: 50px;
+  border: 2px dotted darkgrey;
+  padding: 5%;
+}
+
+.title-container {
+  text-align: left;
+}
+
+input[type="title"] {
+  width: 50%;
+  height: 100%;
+  font-size: 18px;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: lightgrey;
+  outline: none;
+  font-family: Raleway;
+  text-align: center;
+  border: none;
+}
+
+.dropdown-menu {
+  width: 50%;
+  height: 100%;
+  font-size: 18px;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: lightgrey;
+  outline: none;
+  font-family: Raleway;
+  text-align: center;
+  border: none;
+}
+
+.description-field {
+  width: 50%;
+  height: 100%;
+  font-size: 18px;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: lightgrey;
+  outline: none;
+  font-family: Raleway;
+  text-align: center;
+  border: none;
+}
+
+.radio-group {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid gray;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+input[type="radio"]:checked {
+  background-color: darkblue;
+}
+
+label {
+  font-size: 14px;
+}
+
+.subsubheading {
+  font-size: 14px;
+}
+
+.duration {
+  width: 20%;
+  height: 80%;
+  font-size: 18px;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: lightgrey;
+  outline: none;
+  font-family: Raleway;
+  text-align: center;
+  border: none;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 200px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.Rectangle-34 {
+  background-color: orange;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+  width: 200px;
+  margin: 20px;
+}
+
+.big-box {
+  justify-content: center;
+}
+.Rectangle-66 {
+  margin-left: 600px;
+}
+
+/* About Us Page */
+
+.about-us {
+  width: 100%;
+  height: auto;
+margin: auto;
+padding: 0;
+/* height: 100%; */
+max-width: 100%;
+/* max-height: 100%; */
+display: flex;
+/* margin: 0 auto; */
+
+}
+
+
+.mission {
+  margin-left: 25%;
+  margin-right: 25%;
+  max-width: 600px;
+  padding: 20px;
+  position: absolute;
+  left: 50px;
+  font-family: Raleway;
+  line-height: 130%;
+  text-align: justify;
+  word-wrap: break-word;
+  display: inline-block;
+  align-self: center;
+}
+
+#mission_body {
+  margin: 15px;
+}
+
+
+@media only screen and (max-width: 600px)  {
+  .about-us {
+    margin: 10%;
+  }
+  
+  .mission {
+    margin: 0;
+  }
+
+/* add auction */
+
+/* form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+} */
+
+.sell-container {
+  display: inline-block;
+  /* grid-template-columns: repeat(5, auto);
+  grid-auto-rows: 400px;
+  grid-gap: 20px; */
+  /* justify-content: center; */
+  padding-top: 20px;
+  position: relative;
+  margin-left: 650px;
+}
+
+/* table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 10px;
+} */
+
+/* th {
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  text-align: left;
+  border-radius: 5px 0 0 5px;
+} */
+
+/* td {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 0 5px 5px 0;
+} */
+
+/* input[type="text"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #dcdcdc;
+  font-size: 16px;
+  color: #333;
+} */
+
+textarea#id_description {
+  border-radius: 5px;
+  border: 1px solid #dcdcdc;
+}
+
+input#id_starting_price {
+  border-radius: 5px;
+  border: 1px solid #dcdcdc;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M15.5 5.5l-7.5 7.5-7.5-7.5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 8px 8px;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #27ae60;
+}
+
