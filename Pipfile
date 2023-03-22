@@ -9,6 +9,10 @@ psycopg2 = "*"
 python-dotenv = "*"
 gunicorn = "*"
 whitenoise = "*"
+boto3 = "*"
+django-filter = "*"
+django-storages = "*"
+pillow = "*"
 
 [dev-packages]
 
